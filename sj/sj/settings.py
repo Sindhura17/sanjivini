@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'php.apps.PhpConfig'
 ]
 
 MIDDLEWARE = [
@@ -78,9 +79,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'health',
     'USER': 'root',
-    'PASSWORD': “”,
-    'HOST': “”,
-    'PORT': “”,
+    'PASSWORD': '',
+    'HOST': '',
+    'PORT': '',
     'OPTIONS': {
         'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         }
