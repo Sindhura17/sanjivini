@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'sj.wsgi.application'
 DATABASES = {
     'default': {    
     'ENGINE': 'django.db.backends.mysql',
-    'NAME': 'health',
+    'NAME': 'healths',
     'USER': 'root',
     'PASSWORD': '',
     'HOST': '',
