@@ -6,7 +6,7 @@ class doc(models.Model):
     password=models.CharField(max_length=30)
     email=models.EmailField(max_length=50)
     name=models.CharField(max_length=30)
-    phone=models.CharField(max_length=10)
+    phone=models.CharField(max_length=10,Unique=True)
     city=models.CharField(max_length=30)
     special=models.CharField(max_length=30)
 
@@ -17,8 +17,8 @@ class patient(models.Model):
     phone=models.CharField(max_length=10)
 
 class medication(models.Model):
-    evevtdate=models.ForeignKey(event,on_delete=models.CASCADE)
-    adhar_no=models.ForeignKey(patient,on_delete=models.CASCADE)
+    eventid=models.ForeignKey("event",on_delete=models.CASCADE)
+    adhar_no=models.ForeignKey("patient",on_delete=models.CASCADE)
     desc=models.TextField()
 
     
@@ -27,7 +27,7 @@ class ngo(models.Model):
     password=models.CharField(max_length=20)
     email=models.EmailField(max_length=30)
     name=models.CharField(max_length=30)
-    ph=models.IntegerField(Unique=True)
+    ph=models.IntegerField(max_length=10,Unique=True)
     link=models.CharField(max_length=100)
     text=models.TextField(null=True)
 
