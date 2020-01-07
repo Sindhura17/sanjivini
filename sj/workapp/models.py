@@ -42,8 +42,10 @@ class event(models.Model):
     org_id=models.ForeignKey("ngo",on_delete=models.CASCADE,)
     city=models.CharField(max_length=40)
     nod=models.IntegerField(Default=0)
+    maxd=models.IntegerField()
     date=models.DateField()
     time=models.TimeField(auto_now=False,auto_now_add=False)
+    
     
 class doregis(models.Model):
     evid=models.ForeignKey("event",on_delete=models.CASCADE)
