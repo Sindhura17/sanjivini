@@ -17,11 +17,14 @@ class patient(models.Model):
     phone=models.CharField(max_length=10)
 
 class medication(models.Model):
-    class Meta:
-        unique_together(('eventid','adhar_no'),)
     eventid=models.ForeignKey("event",on_delete=models.CASCADE)
     adhar_no=models.ForeignKey("patient",on_delete=models.CASCADE)
     desc=models.TextField()
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['eventid','adhar_no'],name='unique_desc'),
+        ] 
+    
 
     
 class ngo(models.Model):
