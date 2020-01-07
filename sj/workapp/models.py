@@ -20,6 +20,11 @@ class medication(models.Model):
     eventid=models.ForeignKey("event",on_delete=models.CASCADE)
     adhar_no=models.ForeignKey("patient",on_delete=models.CASCADE)
     desc=models.TextField()
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['eventid','adhar_no'],name='unique_desc'),
+        ] 
+    
 
     
 class ngo(models.Model):
