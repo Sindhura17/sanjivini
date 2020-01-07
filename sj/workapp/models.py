@@ -6,7 +6,7 @@ class doc(models.Model):
     password=models.CharField(max_length=30)
     email=models.EmailField(max_length=50)
     name=models.CharField(max_length=30)
-    phone=models.CharField(max_length=10,Unique=True)
+    phone=models.CharField(max_length=10,unique=True)
     city=models.CharField(max_length=30)
     special=models.CharField(max_length=30)
 
@@ -28,11 +28,11 @@ class medication(models.Model):
 
     
 class ngo(models.Model):
-    username=models.CharField(max_length=20,Unique=True)
+    username=models.CharField(max_length=20,unique=True)
     password=models.CharField(max_length=20)
     email=models.EmailField(max_length=30)
     name=models.CharField(max_length=30)
-    ph=models.IntegerField(max_length=10,Unique=True)
+    ph=models.IntegerField(max_length=10,unique=True)
     link=models.CharField(max_length=100)
     text=models.TextField(null=True)
 
@@ -41,7 +41,7 @@ class event(models.Model):
     venue=models.CharField(max_length=50)
     org_id=models.ForeignKey("ngo",on_delete=models.CASCADE,)
     city=models.CharField(max_length=40)
-    nod=models.IntegerField(Default=0)
+    nod=models.IntegerField(default=0)
     date=models.DateField()
     time=models.TimeField(auto_now=False,auto_now_add=False)
     
