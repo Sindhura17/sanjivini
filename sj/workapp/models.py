@@ -32,7 +32,7 @@ class ngo(models.Model):
     password=models.CharField(max_length=20)
     email=models.EmailField(max_length=30)
     name=models.CharField(max_length=30)
-    ph=models.IntegerField(max_length=10,unique=True)
+    ph=models.CharField(max_length=10,unique=True)
     link=models.CharField(max_length=100)
     text=models.TextField(null=True)
 
