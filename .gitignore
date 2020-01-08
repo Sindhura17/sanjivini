@@ -1,4 +1,5 @@
+
 *.pyc
-000*.py
-__*__.py
-*/__*__/*
+|sj/workapp/migrations/*
+
+sj/workapp/migrations/0001_initial.py
