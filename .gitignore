@@ -1,2 +1,6 @@
 
 *.pyc
+|sj/workapp/migrations/*
+
+sj/workapp/migrations/0001_initial.py
+
