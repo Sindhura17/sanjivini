@@ -33,7 +33,7 @@ class ngo(models.Model):
     email=models.EmailField(max_length=30)
     name=models.CharField(max_length=30)
     ph=models.CharField(max_length=10,unique=True)
-    link=models.CharField(max_length=100)
+    link=models.URLField(max_length=100)
     text=models.TextField(null=True)
 
 class event(models.Model):
