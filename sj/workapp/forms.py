@@ -16,7 +16,7 @@ class docForm(forms.Form):
         fields=("username","password","email","name","phone","city","special",)
 
 
-class ngoform(forms.ModelFrom):
+class ngoForm(forms.ModelForm):
     Username=forms.CharField()
     Password=forms.CharField(widget=forms.PasswordInput())
     Email=forms.EmailField()
@@ -26,5 +26,5 @@ class ngoform(forms.ModelFrom):
     Description=forms.CharField(widget=forms.Textarea(attrs={"rows":5,"cols":20}))
     class Meta:
         model=ngo
-        field=('username','password','email','name','ph','link','text',)
+        fields=('username','password','email','name','ph','link','text',)
 
