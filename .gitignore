@@ -4,3 +4,4 @@
 
 sj/workapp/migrations/0001_initial.py
 
+*.pyc
