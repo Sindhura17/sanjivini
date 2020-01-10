@@ -16,18 +16,18 @@ def docsign(request):
     dform=docForm(request.POST)
     if dform.is_valid():
         d=dform.save()
-    
-    request.session['did'] = d.id
+        request.session['did'] = d.id
     return HttpResponseRedirect('/workapp/register')
 
 def register(request):
-    return render(request,'http://127.0.0.1:8000/')
+    return render(request,'home.html')
 
 def ngosign(request):
     nform=ngoForm(request.POST)
     if nform.is_valid():
         n=nform.save()
-    request.session['did'] = n.id
+        request.session['nid'] = n.id
     return HttpResponseRedirect('/workapp/nregister')
+
 def nregister(request):
-    return render(request,'http://127.0.0.1:8000/')
+    return render(request,'home.html')
