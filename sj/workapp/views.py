@@ -1,18 +1,33 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render,redirect
 from workapp.forms import docForm,ngoForm
+from django.http import HttpResponse
+from django.http import HttpResponseRedirect
+from .models import doc,ngo
 
 # Create your views here.
-'''class sign_in(TemplateView):
-    template_name='workapp/sign_in.html'
-    
-    def get(self,request):
-        dform=docForm()
-        nform=ngoForm()
-        
-        return render(request,self.template_name,{'dform':dform,'nform':nform})'''
+
 def sign_in(request):
     dform=docForm()
     nform=ngoForm()
     return render(request,'workapp/sign_in.html',{'dform':dform,'nform':nform})
-        
+
+def docsign(request):
+    dform=docForm(request.POST)
+    if dform.is_valid():
+        d=dform.save()
+    
+    request.session['did'] = d.id
+    return HttpResponseRedirect('/workapp/register')
+
+def register(request):
+    return render(request,'http://127.0.0.1:8000/')
+
+def ngosign(request):
+    nform=ngoForm(request.POST)
+    if nform.is_valid():
+        n=nform.save()
+    request.session['did'] = n.id
+    return HttpResponseRedirect('/workapp/nregister')
+def nregister(request):
+    return render(request,'http://127.0.0.1:8000/')
