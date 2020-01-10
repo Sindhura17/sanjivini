@@ -36,6 +36,6 @@ class ngoForm(forms.ModelForm):
             'password':forms.TextInput(attrs={'class':"form-control"}),
             'ph':forms.TextInput(attrs={'class':"form-control"}),
             'link':forms.TextInput(attrs={'class':"form-control"}),
-            'text':forms.Textarea(attrs={"rows":5,"cols":20}),
+            'text':forms.TextInput(attrs={'class':"form-control"}),
             }
 
