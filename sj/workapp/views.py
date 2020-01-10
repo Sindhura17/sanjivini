@@ -30,4 +30,4 @@ def ngosign(request):
     return HttpResponseRedirect('/workapp/nregister')
 
 def nregister(request):
-    return render(request,'home.html')
+    return render(request,'ngopage.html')
