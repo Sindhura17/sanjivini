@@ -11,4 +11,4 @@ class sign_in(TemplateView):
         nform=ngoForm()
         return render(request,self.template_name,{'dform':dform,'nform':nform})
         
-        
+         
