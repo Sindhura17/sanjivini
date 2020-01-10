@@ -11,3 +11,9 @@
 	margin-top:40px;
 }
 
+body{
+background:url("/static/image4.jpg");
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
