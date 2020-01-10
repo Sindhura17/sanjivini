@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	
+	<link rel="stylesheet" href="/static/style3.css"> 
   <title>Sign in</title>
   </head>
   <body>
@@ -12,19 +12,89 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 	</nav>
-  <form action="/workapp/sing_in/" method="POST">
+	<div>
+	<h4 class="text-primary">Doctor Sign in:</h4>
+	</div>
+  <form action="/workapp/docsign/" method="POST">
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label>Name</label>
+      <label>Username:</label>
+	  {{dform.username}}
+    </div>
+	 <div class="form-group col-md-6">
+      <label>Name:</label>
 	  {{dform.name}}
     </div>
+	<div class="form-group col-md-6">
+      <label>Password:</label>
+	  {{dform.password}}
+    </div>
+	<div class="form-group col-md-6">
+      <label>Email:</label>
+	  {{dform.email}}
+    </div>
+	<div class="form-group col-md-6">
+      <label>City:</label>
+	  {{dform.city}}
+    </div>
+	<div class="form-group col-md-6">
+      <label>Phone Number:</label>
+	  {{dform.phone}}
+    </div>
+	<div class="form-group col-md-4">
+    <label>Specialization:</label>
+	{{dform.special}}
+  </div>
 	</div>
+	<button type="submit" class="btn btn-primary">Sign in</button>
 	</form>
-  </form>
+	
+	<div class="edclass">
+	<h4 class="text-primary">NGO Sign in:</h4>
+	</div>
+  <form action="/workapp/ngosign/" method="POST">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Username:</label>
+	  {{dform.username}}
+    </div>
+	 <div class="form-group col-md-6">
+      <label>Name:</label>
+	  {{dform.name}}
+    </div>
+	<div class="form-group col-md-6">
+      <label>Password:</label>
+	  {{dform.password}}
+    </div>
+	<div class="form-group col-md-6">
+      <label>Email:</label>
+	  {{dform.email}}
+    </div>
+	<div class="form-group col-md-6">
+      <label>Website link:</label>
+	  {{dform.city}}
+    </div>
+	<div class="form-group col-md-6">
+      <label>Phone Number:</label>
+	  {{dform.phone}}
+    </div>
+	<div class="form-group col-md-4">
+    <label>Description:</label>
+	{{dform.special}}
+  </div>
+	</div>
+	<button type="submit" class="btn btn-primary">Sign in</button>
+	</form>
+	
+	
   </body>
+  
   <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	</html>
+	
+	
+	
