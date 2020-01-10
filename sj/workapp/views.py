@@ -9,6 +9,7 @@ from workapp.forms import docForm,ngoForm
     def get(self,request):
         dform=docForm()
         nform=ngoForm()
+        
         return render(request,self.template_name,{'dform':dform,'nform':nform})'''
 def sign_in(request):
     dform=docForm()

@@ -14,6 +14,10 @@ class docForm(forms.ModelForm):
     class Meta:
         model=doc
         fields=('username','password','email','name','phone','city','special',)
+        widgets={
+            'name':forms.TextInput(
+            attrs={'class':"form-control"})
+            }
 
 
 class ngoForm(forms.ModelForm):
