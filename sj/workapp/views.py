@@ -24,7 +24,9 @@ def docsign(request):
 
 def register(request):
     did=request.session['did']
-    return render(request,'docpage.html')
+    dobj=doc.objects.filter(id=did)
+    print(dobj[0].name)
+    return render(request,'workapp/docpage.html')
 
 def ngosign(request):
     nform=ngoForm(request.POST)
@@ -66,3 +68,7 @@ def nregister(request):
     nobj=ngo.objects.filter(id=nid)
     print(nobj[0].name)
     return render(request,'workapp/ngopage.html')
+
+
+def eventpage(request):
+    return render(request,'workapp/evenpage.html')
