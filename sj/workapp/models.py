@@ -25,8 +25,6 @@ class medication(models.Model):
             models.UniqueConstraint(fields=['eventid','adhar_no'],name='unique_desc'),
         ] 
     
-
-    
 class ngo(models.Model):
     username=models.CharField(max_length=20,unique=True)
     password=models.CharField(max_length=20)
@@ -45,6 +43,7 @@ class event(models.Model):
     maxd=models.IntegerField()
     date=models.DateField()
     time=models.TimeField(auto_now=False,auto_now_add=False)
+    
     text=models.TextField(null=True)
     
     
