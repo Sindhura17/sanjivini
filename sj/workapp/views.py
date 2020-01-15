@@ -34,6 +34,29 @@ def ngosign(request):
     dform=docForm()
     nform=ngoForm()
     return render(request,'workapp/sign_up.html',{'dform':dform,'nform':nform})
+    
+def ngosign_in(request):
+    uname=request.POST.get("nusername")
+    password=request.POST.get("npassword")
+    nobj=ngo.objects.filter(username=uname)
+    if not nobj:
+        return HttpResponse("no username")
+    if(nobj[0].password==password):
+        return HttpResponse("found")
+    else:
+        return HttpResponse("not found")
+        
+def docsign_in(request):
+    uname=request.POST.get("username")
+    password=request.POST.get("password")
+    dobj=doc.objects.filter(username=uname)
+    if not dobj:
+        return HttpResponse("no username")
+    if(dobj[0].password==password):
+        return HttpResponse("found")
+    else:
+        return HttpResponse("not found")
+   
 
 def nregister(request):
     return render(request,'home.html')
