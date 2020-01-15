@@ -28,8 +28,6 @@ def ngosign(request):
         n=nform.save()
         request.session['nid'] = n.id
     return HttpResponseRedirect('/workapp/nregister')
-    
-def 
 
 def nregister(request):
     return render(request,'ngopage.html')
