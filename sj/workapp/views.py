@@ -7,7 +7,7 @@ from .models import doc,ngo
 
 # Create your views here.
 
-def sign_in(request):
+def sign_Up(request):
     dform=docForm()
     nform=ngoForm()
     return render(request,'workapp/sign_in.html',{'dform':dform,'nform':nform})
@@ -28,6 +28,8 @@ def ngosign(request):
         n=nform.save()
         request.session['nid'] = n.id
     return HttpResponseRedirect('/workapp/nregister')
+    
+def 
 
 def nregister(request):
     return render(request,'ngopage.html')
