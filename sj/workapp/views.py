@@ -20,7 +20,7 @@ def docsign(request):
         return HttpResponseRedirect('/workapp/register')
     dform=docForm()
     nform=ngoForm()
-    return render(request,'workapp/sign_in.html',{'dform':dform,'nform':nform})
+    return render(request,'workapp/sign_Up.html',{'dform':dform,'nform':nform})
 
 def register(request):
     return render(request,'home.html')
@@ -33,7 +33,7 @@ def ngosign(request):
         return HttpResponseRedirect('/workapp/nregister')
     dform=docForm()
     nform=ngoForm()
-    return render(request,'workapp/sign_in.html',{'dform':dform,'nform':nform})
+    return render(request,'workapp/sign_Up.html',{'dform':dform,'nform':nform})
 
 def nregister(request):
     return render(request,'home.html')
