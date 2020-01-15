@@ -45,6 +45,7 @@ class event(models.Model):
     maxd=models.IntegerField()
     date=models.DateField()
     time=models.TimeField(auto_now=False,auto_now_add=False)
+    text=models.TextField()
     
     
 class doregis(models.Model):

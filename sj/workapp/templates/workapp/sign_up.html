@@ -4,7 +4,7 @@
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
    <link rel="stylesheet" href="/static/style3.css"> 
   
-  <title>Sign in</title>
+  <title>Sign Up</title>
   </head>
 
   <body>
@@ -15,7 +15,7 @@
           <a class="navbar-brand" href="http://127.0.0.1:8000/">Home</a>
 	</nav>
 	<div>
-	<h4 class="text-primary">Doctor Sign in:</h4>
+	<h4 class="text-primary">Doctor Sign Up:</h4>
 	</div>
 
   <form action="/workapp/docsign/" method="POST"> {% csrf_token %}
@@ -50,11 +50,11 @@
 	{{dform.special}}
   </div>
 	</div>
-	<button type="submit" class="btn btn-primary">Sign in</button>
+	<button type="submit" class="btn btn-primary">Sign Up</button>
 	</form>
 	
 	<div class="edclass">
-	<h4 class="text-primary">NGO Sign in:</h4>
+	<h4 class="text-primary">NGO Sign Up:</h4>
 	</div>
   <form action="/workapp/ngosign/" method="POST">  {% csrf_token %}
   <div class="form-row">
@@ -88,7 +88,7 @@
 	
   </div>
 	</div>
-	<button type="submit" class="btn btn-primary">Sign in</button>
+	<button type="submit" class="btn btn-primary">Sign Up</button>
 	</form>
   </body>
   
