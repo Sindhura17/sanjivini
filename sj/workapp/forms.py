@@ -6,7 +6,7 @@ class docForm(forms.ModelForm):
     
     class Meta:
         model=doc
-        fields=('username','password','email','name','phone','city','special',)
+        fields="__all__"
         widgets={
             'name':forms.TextInput(attrs={'class':"form-control"}),
             'username':forms.TextInput(attrs={'class':"form-control"}),
@@ -19,16 +19,16 @@ class docForm(forms.ModelForm):
 
 
 class ngoForm(forms.ModelForm):
-    '''Username=forms.CharField()
+    #Username=forms.CharField()
     Password=forms.CharField(widget=forms.PasswordInput())
     Email=forms.EmailField()
-    Name=forms.CharField()
+    '''Name=forms.CharField()
     Phone=forms.CharField()
     Website=forms.URLField()
     Description=forms.CharField(widget=forms.Textarea(attrs={"rows":5,"cols":20}))'''
     class Meta:
         model=ngo
-        fields=('username','password','email','name','ph','link','text',)
+        fields="__all__"
         widgets={
             'name':forms.TextInput(attrs={'class':"form-control"}),
             'username':forms.TextInput(attrs={'class':"form-control"}),

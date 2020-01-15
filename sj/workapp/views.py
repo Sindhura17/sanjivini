@@ -17,7 +17,12 @@ def docsign(request):
     if dform.is_valid():
         d=dform.save()
         request.session['did'] = d.id
-    return HttpResponseRedirect('/workapp/register')
+        return HttpResponseRedirect('/workapp/register')
+    dform=docForm()
+    nform=ngoForm()
+    return render(request,'workapp/sign_in.html',{'dform':dform,'nform':nform})
+
+    
 
 def register(request):
     return render(request,'home.html')
@@ -27,7 +32,11 @@ def ngosign(request):
     if nform.is_valid():
         n=nform.save()
         request.session['nid'] = n.id
-    return HttpResponseRedirect('/workapp/nregister')
+        return HttpResponseRedirect('/workapp/nregister')
+    dform=docForm()
+    nform=ngoForm()
+    return render(request,'workapp/sign_in.html',{'dform':dform,'nform':nform})
+
 
 def nregister(request):
-    return render(request,'ngopage.html')
+    return render(request,'home.html')
