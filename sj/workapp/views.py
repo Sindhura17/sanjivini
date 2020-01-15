@@ -21,7 +21,7 @@ def docsign(request):
     dform=docForm()
     nform=ngoForm()
     return render(request,'workapp/sign_in.html',{'dform':dform,'nform':nform})
-    
+
 def register(request):
     return render(request,'home.html')
 
