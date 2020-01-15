@@ -1,6 +1,6 @@
 
 from django import forms
-from .models import doc,ngo
+from .models import doc,ngo,event,patient
 
 class docForm(forms.ModelForm):
     
@@ -34,9 +34,34 @@ class ngoForm(forms.ModelForm):
             'email':forms.EmailInput(attrs={'class':"form-control"}),
             'password':forms.PasswordInput(attrs={'class':"form-control"}),
             'ph':forms.TextInput(attrs={'class':"form-control"}),
-            'link':forms.TextInput(attrs={'class':"form-control"}),
+            'link':forms.URLInput(attrs={'class':"form-control"}),
             'text':forms.TextInput(attrs={'class':"form-control"}),
             }
+
+class eventForm(forms.ModelForm):
+    class Meta:
+        model=event
+        fields=['name','venue','city','maxd','date','time','text']
+        widgets={
+            'name':forms.TextInput(attrs={'class':"form-control"}),
+            'venue':forms.TextInput(attrs={'class':"form-control"}),
+            'city':forms.TextInput(attrs={'class':"form-control"}),
+            'maxd':forms.NumberInput(attrs={'class':"form-control"}),
+            'date':forms.DateInput(attrs={'class':"form-control"}),
+            'time':forms.TimeInput(attrs={'class':"form-control"}),
+            'text':forms.TextInput(attrs={'class':"form-control"}),
+        }
+
+class patientForm(forms.ModelForm):
+    class Meta:
+        model=patient
+        fields=['name','city','adhar_no','phone']
+        widgets={
+            'name':forms.TextInput(attrs={'class':"form-control"}),
+            'city':forms.TextInput(attrs={'class':"form-control"}),
+            'adhar_no':forms.TextInput(attrs={'class':"form-control"}),
+            'phone':forms.TextInput(attrs={'class':"form-control"}),
+        }
 
 
 
