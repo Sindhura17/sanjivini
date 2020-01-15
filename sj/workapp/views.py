@@ -63,4 +63,6 @@ def docsign_in(request):
 
 def nregister(request):
     nid=request.session['nid']
-    return render(request,'ngopage.html')
+    nobj=ngo.objects.filter(id=nid)
+    print(nobj[0].name)
+    return render(request,'workapp/ngopage.html')
