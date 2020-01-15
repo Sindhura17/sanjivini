@@ -7,10 +7,10 @@ from .models import doc,ngo
 
 # Create your views here.
 
-def sign_Up(request):
+def sign_up(request):
     dform=docForm()
     nform=ngoForm()
-    return render(request,'workapp/sign_in.html',{'dform':dform,'nform':nform})
+    return render(request,'workapp/sign_up.html',{'dform':dform,'nform':nform})
 
 def docsign(request):
     dform=docForm(request.POST)
@@ -20,7 +20,7 @@ def docsign(request):
         return HttpResponseRedirect('/workapp/register')
     dform=docForm()
     nform=ngoForm()
-    return render(request,'workapp/sign_in.html',{'dform':dform,'nform':nform})
+    return render(request,'workapp/sign_up.html',{'dform':dform,'nform':nform})
 
 def register(request):
     return render(request,'home.html')
@@ -33,7 +33,7 @@ def ngosign(request):
         return HttpResponseRedirect('/workapp/nregister')
     dform=docForm()
     nform=ngoForm()
-    return render(request,'workapp/sign_in.html',{'dform':dform,'nform':nform})
+    return render(request,'workapp/sign_up.html',{'dform':dform,'nform':nform})
 
 def nregister(request):
     return render(request,'home.html')
