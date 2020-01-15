@@ -27,7 +27,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 
                   
-                    <form class="px-4 py-3" action='#' method=POST>{% csrf_token %}
+                    <form class="px-4 py-3" action='/workapp/docsign_in/' method=POST>{% csrf_token %}
                       <div class="form-group">
                         <label>Username</label>
                         <input type="text" class="form-control" name = 'username' placeholder = 'Username'>
@@ -53,7 +53,7 @@
                       NGO
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <form class="px-4 py-3" action='#' method=POST>{% csrf_token %}
+                  <form class="px-4 py-3" action='/workapp/ngosign_in/' method=POST>{% csrf_token %}
                     <div class="form-group">
                       <label>Username</label>
                       <input type="text" class="form-control" name = 'nusername' placeholder = 'Username'>
