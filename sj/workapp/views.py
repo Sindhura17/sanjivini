@@ -16,7 +16,7 @@ def docsign(request):
     dform=docForm(request.POST)
     if dform.is_valid():
         d=dform.save()
-        request.session['did'] = d.id
+        request.session['did'] = d.id       
     return HttpResponseRedirect('/workapp/register')
 
 def register(request):
