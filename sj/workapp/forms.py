@@ -10,17 +10,17 @@ class docForm(forms.ModelForm):
         widgets={
             'name':forms.TextInput(attrs={'class':"form-control"}),
             'username':forms.TextInput(attrs={'class':"form-control"}),
-            'email':forms.TextInput(attrs={'class':"form-control"}),
-            'password':forms.TextInput(attrs={'class':"form-control"}),
+            'email':forms.EmailInput(attrs={'class':"form-control"}),
+            'password':forms.PasswordInput(attrs={'class':"form-control"}),
             'phone':forms.TextInput(attrs={'class':"form-control"}),
             'city':forms.TextInput(attrs={'class':"form-control"}),
             'special':forms.TextInput(attrs={'class':"form-control"}),
             }
 
 class ngoForm(forms.ModelForm):
-    '''Username=forms.CharField()
-    Password=forms.CharField(widget=forms.PasswordInput())
-    Email=forms.EmailField()
+    '''Uername=forms.CharField()
+    password=forms.CharField(widget=forms.PasswordInput())
+    email=forms.EmailField()
     Name=forms.CharField()
     Phone=forms.CharField()
     Website=forms.URLField()
@@ -31,10 +31,12 @@ class ngoForm(forms.ModelForm):
         widgets={
             'name':forms.TextInput(attrs={'class':"form-control"}),
             'username':forms.TextInput(attrs={'class':"form-control"}),
-            'email':forms.TextInput(attrs={'class':"form-control"}),
-            'password':forms.TextInput(attrs={'class':"form-control"}),
+            'email':forms.EmailInput(attrs={'class':"form-control"}),
+            'password':forms.PasswordInput(attrs={'class':"form-control"}),
             'ph':forms.TextInput(attrs={'class':"form-control"}),
             'link':forms.TextInput(attrs={'class':"form-control"}),
             'text':forms.TextInput(attrs={'class':"form-control"}),
             }
+
+
 
