@@ -9,7 +9,7 @@ background:url("/static/im4.jpg");
  background-repeat: no-repeat;
  background-size: cover;
 }
-.btn.btn-outline-primary{
+.btn.btn-primary{
 margin:15px;
 allign:end;
 }
@@ -38,6 +38,10 @@ margin:5px;
 
     {{m}}
 
+    <button type="button" class="btn btn-primary" style="position: absolute; right: 0;" data-toggle="modal" data-target="#exampleModal">
+      Add a New Event
+    </button>
+
     <div class="text" >
       <div class="font-italic">
       <h2>{{ngo.name}}</h2>
@@ -47,12 +51,8 @@ margin:5px;
       <h3>{{ngo.link}}</h3>
       <h3>{{ngo.text}}</h3>
       </div>
-  <!-- Button trigger modal -->
-<button type="button" class="btn btn-outline-primary" style="position: absolute; right: 0;" data-toggle="modal" data-target="#exampleModal">
-  Add a New Event
-</button>
 
-<!-- Modal -->
+
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
