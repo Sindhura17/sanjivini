@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render,redirect
-from workapp.forms import docForm,ngoForm
+from workapp.forms import docForm,ngoForm,eventForm,patientForm
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from .models import doc,ngo,event
@@ -76,6 +76,7 @@ def docsign_in(request):
 def nregister(request):
     nid=request.session['nid']
     nobj=ngo.objects.filter(id=nid)
+
     eobj=event.objects.filter(org_id=nid)
     non=nobj[0].name
     firstletter=non[0]
@@ -87,9 +88,22 @@ def nregister(request):
     nobj[0].name=non
     nobj1=nobj[0]
     nobj1.name=non
-    N={"ngo":nobj1,"eve":eobj}
+    eform=eventForm()
+    N={"ngo":nobj1,"eve":eobj,'eform':eform}
     return render(request,'workapp/ngopage.html',N)
 
 
 def eventpage(request):
     return render(request,'workapp/eventpage.html')
+
+def eventreg(request):
+    eform=eventForm(request.POST)
+    if eform.is_valid():
+        e=eform.save()
+        nid=request.session['nid']
+        e.org_id_id=nid
+        e.save()
+        return render(request,'/workapp/ngopage.html',{'m':'Event registered'})
+    eform=eventForm()
+    return render(request,'workapp/ngopage.html',{'eform':eform,'m':'Enter valid details'})
+    

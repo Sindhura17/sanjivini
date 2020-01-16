@@ -35,7 +35,7 @@ class ngoForm(forms.ModelForm):
             'password':forms.PasswordInput(attrs={'class':"form-control"}),
             'ph':forms.TextInput(attrs={'class':"form-control"}),
             'link':forms.URLInput(attrs={'class':"form-control"}),
-            'text':forms.TextInput(attrs={'class':"form-control"}),
+            'text':forms.Textarea(attrs={'class':"form-control"}),
             }
 
 class eventForm(forms.ModelForm):
@@ -49,7 +49,7 @@ class eventForm(forms.ModelForm):
             'maxd':forms.NumberInput(attrs={'class':"form-control"}),
             'date':forms.DateInput(attrs={'class':"form-control"}),
             'time':forms.TimeInput(attrs={'class':"form-control"}),
-            'text':forms.TextInput(attrs={'class':"form-control"}),
+            'text':forms.Textarea(attrs={'class':"form-control"}),
         }
 
 class patientForm(forms.ModelForm):
