@@ -10,5 +10,5 @@ path('register/',views.register,name='register'),
 path('nregister/',views.nregister,name='nregister'),
 path('ngosign_in/',views.ngosign_in,name='ngosign_in'),
 path('docsign_in/',views.docsign_in,name='docsign_in'),
-path('eventpage/',views.eventpage,name='eventpage'),
+path('eventreg/',views.eventreg,name='eventreg'),
 ]
