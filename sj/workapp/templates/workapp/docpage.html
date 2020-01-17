@@ -8,6 +8,21 @@ background:url("/static/im4.jpg");
  background-repeat: no-repeat;
  background-size: cover;
 }
+.text{
+margin:15px;
+}
+.buttondiv{
+display:flex;
+}
+.buttondiv > a{
+margin:5px;
+}
+.pcls{
+display:flex;
+}
+.pcls > p{
+margin:5px;
+}
   </style> 
   
   <title>Doctor Page</title>
@@ -20,6 +35,31 @@ background:url("/static/im4.jpg");
    <nav class="navbar navbar-expand-lg navbar-black bg-dark">
           <a class="navbar-brand" href="http://127.0.0.1:8000/">Home</a>
 	</nav>
+	<h1> Events: </h1>
+	<div class="events">
+	{% for i in eve %}
+	 <hr style="height: 1px" noshade>
+	<div class="card-body">
+    <h5 class="card-title">{{ i.name }}</h5>
+    <p class="card-text">{{ i.text }}</p>
+	<div class="pcls">
+	<p class="card-text">{{ i.city }}</p>
+	<p class="card-text">{{ i.venue }}</p>
+	</div>
+	<div class="pcls">
+	<p class="card-text">{{ i.date }}</p>
+	<p class="card-text">{{ i.time }}</p>
+	</div>
+	<div class="pcls">
+	<p class="card-text">{{ i.nname }}</p>
+	<p class="card-text">  Contact: {{ i.ph }}</p>
+	</div>
+	<div class="buttondiv">
+    <a href="#" class="btn btn-primary">Register</a>
+	</div>
+  </div>
+  {% endfor %}
+  </div>
 	
 	</body>
 </html>

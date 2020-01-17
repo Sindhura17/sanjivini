@@ -25,6 +25,7 @@ def docsign(request):
 def register(request):
     did=request.session['did']
     dobj=doc.objects.filter(id=did)
+    eobj=event.objects.all()
     don=dobj[0].name
     firstletter=don[0]
     if(ord(firstletter)>=97):
@@ -35,7 +36,14 @@ def register(request):
     dobj[0].name=don
     dobj1=dobj[0]
     dobj1.name=don
-    D={"doc":dobj1}
+    eobj1=eobj
+    for i in eobj1:
+        nobj=ngo.objects.get(id=i.org_id_id)
+        nname=nobj.name
+        cn=nobj.ph
+        i.nname=nname
+        i.ph=cn
+    D={"doc":dobj1,"eve":eobj1}
     return render(request,'workapp/docpage.html',D)
 
 def ngosign(request):
@@ -76,7 +84,6 @@ def docsign_in(request):
 def nregister(request):
     nid=request.session['nid']
     nobj=ngo.objects.filter(id=nid)
-
     eobj=event.objects.filter(org_id=nid)
     non=nobj[0].name
     firstletter=non[0]
