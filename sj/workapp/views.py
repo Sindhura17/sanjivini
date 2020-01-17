@@ -96,7 +96,8 @@ def nregister(request):
     nobj1=nobj[0]
     nobj1.name=non
     eform=eventForm()
-    N={"ngo":nobj1,"eve":eobj,'eform':eform}
+    pform=patientForm()
+    N={"ngo":nobj1,"eve":eobj,'eform':eform,'pform':pform}
     return render(request,'workapp/ngopage.html',N)
 
 
@@ -114,4 +115,11 @@ def eventreg(request):
     return HttpResponseRedirect('/workapp/nregister')
     #eform=eventForm()
     #return render(request,'workapp/ngopage.html',{'eform':eform,'m':'Enter valid details'})
+
+
+def add_patient(request):
+    pform=patientForm(request.POST)
+    if pform.is_valid():
+        pform.save()
+    return HttpResponseRedirect('/workapp/nregister')
     
