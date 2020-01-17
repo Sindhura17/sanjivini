@@ -99,11 +99,12 @@ def eventpage(request):
 def eventreg(request):
     eform=eventForm(request.POST)
     if eform.is_valid():
-        e=eform.save()
+        e=eform.save(commit=False)
         nid=request.session['nid']
         e.org_id_id=nid
         e.save()
-        return render(request,'/workapp/ngopage.html',{'m':'Event registered'})
-    eform=eventForm()
-    return render(request,'workapp/ngopage.html',{'eform':eform,'m':'Enter valid details'})
+        #return render(request,'workapp/ngopage.html',{'m':'Event registered'})
+    return HttpResponseRedirect('/workapp/nregister')
+    #eform=eventForm()
+    #return render(request,'workapp/ngopage.html',{'eform':eform,'m':'Enter valid details'})
     
