@@ -55,11 +55,20 @@ margin:5px;
 	<p class="card-text">  Contact: {{ i.ph }}</p>
 	</div>
 	<div class="buttondiv">
-    <a href="#" class="btn btn-primary">Register</a>
+	<button class="btn btn-primary" data-item-id="{{ i.id }}"> Register</button>
 	</div>
   </div>
   {% endfor %}
   </div>
-	
+	<script>
+	$('#btn btn-primary').on('click',function(){
+	var id=$(this).data('item-id');
+	$.ajax({
+	type:'POST',
+	url:'/workapp/aux/',
+	data:id,
+	})
+	});
+	</script>
 	</body>
 </html>

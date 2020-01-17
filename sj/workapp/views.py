@@ -101,8 +101,10 @@ def nregister(request):
     return render(request,'workapp/ngopage.html',N)
 
 
-def eventpage(request):
-    return render(request,'workapp/eventpage.html')
+def aux(request):
+    id=request.POST.get("id")
+    print(id)
+    return HttpResponse("got")
 
 def eventreg(request):
     eform=eventForm(request.POST)
