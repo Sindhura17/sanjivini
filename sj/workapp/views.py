@@ -3,7 +3,7 @@ from django.shortcuts import render,redirect
 from workapp.forms import docForm,ngoForm,eventForm,patientForm
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from .models import doc,ngo,event
+from .models import doc,ngo,event,doregis
 
 # Create your views here.
 
@@ -102,9 +102,20 @@ def nregister(request):
 
 
 def aux(request):
-    id=request.POST.get("id")
-    print(id)
-    return HttpResponse("got")
+    id=request.GET.get("id")
+    did=request.session["did"]
+    eve=event.objects.get(id=id)
+    nod=eve.nod
+    md=eve.maxd
+    if(nod<md):
+        dr=doregis(evid_id=id,docid_id=did)
+        dr.save()
+        return HttpResponse("success")
+    else:
+        return HttpResponse("Already full")
+     
+    
+    
 
 def eventreg(request):
     eform=eventForm(request.POST)
