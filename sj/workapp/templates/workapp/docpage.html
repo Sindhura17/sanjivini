@@ -55,19 +55,24 @@ margin:5px;
 	<p class="card-text">  Contact: {{ i.ph }}</p>
 	</div>
 	<div class="buttondiv">
-	<button class="btn btn-primary" data-item-id="{{ i.id }}"> Register</button>
+	<button class="btn btn-primary bd" id="{{ i.id }}"> Register</button> 
 	</div>
   </div>
   {% endfor %}
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script>
-	$('#btn btn-primary').on('click',function(){
-	var id=$(this).data('item-id');
+	$(document).ready(function(){
+	$('.bd').click(function(){
+	var id=this.id.toString();
+	console.log(id);
 	$.ajax({
-	type:'POST',
+	type:'GET',
 	url:'/workapp/aux/',
-	data:id,
+	data:{'id':id},
+	success:function(){alert("success");}
 	})
+	});
 	});
 	</script>
 	</body>
