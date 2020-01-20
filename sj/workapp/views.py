@@ -1,9 +1,10 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render,redirect
 from workapp.forms import docForm,ngoForm,eventForm,patientForm
-from django.http import HttpResponse
+from django.http import HttpResponse,JsonResponse
 from django.http import HttpResponseRedirect
 from .models import doc,ngo,event,doregis
+import json
 
 # Create your views here.
 
@@ -107,12 +108,15 @@ def aux(request):
     eve=event.objects.get(id=id)
     nod=eve.nod
     md=eve.maxd
-    if(nod<md):
+    print(nod,md)
+    if(nod < md):
         dr=doregis(evid_id=id,docid_id=did)
         dr.save()
-        return HttpResponse("success")
+        data={"s":"success"}
+        return JsonResponse(data)
     else:
-        return HttpResponse("Already full")
+        data={"s":"failed"}
+        return JsonResponse(data)
      
     
     

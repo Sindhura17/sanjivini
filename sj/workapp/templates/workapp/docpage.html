@@ -70,7 +70,8 @@ margin:5px;
 	type:'GET',
 	url:'/workapp/aux/',
 	data:{'id':id},
-	success:function(){alert("success");}
+	datatype:'json',
+	success:function(data){if (data.s=="success"){alert("success");}else {alert("failed")}},
 	})
 	});
 	});
