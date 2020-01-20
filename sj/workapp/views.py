@@ -3,7 +3,7 @@ from django.shortcuts import render,redirect
 from workapp.forms import docForm,ngoForm,eventForm,patientForm
 from django.http import HttpResponse,JsonResponse
 from django.http import HttpResponseRedirect
-from .models import doc,ngo,event,doregis
+from .models import doc,ngo,event,doregis,medication,patient
 import json
 
 # Create your views here.
@@ -117,8 +117,13 @@ def aux(request):
     else:
         data={"s":"failed"}
         return JsonResponse(data)
-     
-    
+        
+def viewdetails(request):
+    adnum=request.POST.get("adharno")
+    md=medication.objects.filter(adhar_no=adnum)
+    pd=patient.objects.get(adhar_no=adnum)
+    E={"md":md,"pd":pd}
+    return render(request,'workapp/patientdetails.html',E)    
     
 
 def eventreg(request):
