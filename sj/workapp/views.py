@@ -1,9 +1,9 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render,redirect
-from workapp.forms import docForm,ngoForm,eventForm,patientForm
+from workapp.forms import docForm,ngoForm,eventForm,patientForm,updateForm
 from django.http import HttpResponse,JsonResponse
 from django.http import HttpResponseRedirect
-from .models import doc,ngo,event,doregis
+from .models import doc,ngo,event,doregis,medication
 import json
 
 # Create your views here.
@@ -98,7 +98,8 @@ def nregister(request):
     nobj1.name=non
     eform=eventForm()
     pform=patientForm()
-    N={"ngo":nobj1,"eve":eobj,'eform':eform,'pform':pform}
+    uform=updateForm()
+    N={"ngo":nobj1,"eve":eobj,'eform':eform,'pform':pform,'uform':uform}
     return render(request,'workapp/ngopage.html',N)
 
 
@@ -139,4 +140,20 @@ def add_patient(request):
     if pform.is_valid():
         pform.save()
     return HttpResponseRedirect('/workapp/nregister')
+
+def update_rec(request):
+    eid=request.POST.get("id")
+    print(eid)
+    uform=updateForm(request.POST)
+    if uform.is_valid():
+        u=uform.save(commit=False) 
+        u.eventid_id=eid
+        u.save()
+        data={"s":"success"}
+        return JsonResponse(data)
+    else:
+        data={"s":"failed"}
+        return JsonResponse(data)
+    
+
     

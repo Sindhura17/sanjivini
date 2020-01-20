@@ -1,6 +1,6 @@
 
 from django import forms
-from .models import doc,ngo,event,patient
+from .models import doc,ngo,event,patient,medication
 
 class docForm(forms.ModelForm):
     
@@ -61,6 +61,16 @@ class patientForm(forms.ModelForm):
             'city':forms.TextInput(attrs={'class':"form-control"}),
             'adhar_no':forms.TextInput(attrs={'class':"form-control"}),
             'phone':forms.TextInput(attrs={'class':"form-control"}),
+        }
+
+class updateForm(forms.ModelForm):
+    class Meta:
+        model=medication
+        fields=['adhar_no','desc']
+        widgets={
+            'adhar_no':forms.TextInput(attrs={'class':"form-control"}),
+            'desc':forms.Textarea(attrs={'class':"form-control"}),
+
         }
 
 
