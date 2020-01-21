@@ -108,7 +108,7 @@ margin:5px;
   </div>
 </div>
 	
-	<body class="events">
+	<div class="events">
 	{% for i in eve %}
 	 <hr style="height: 1px" noshade>
 	<div class="card-body">
@@ -126,7 +126,6 @@ margin:5px;
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#patient">
       Add patient
     </button>
-  <div class="buttondiv">
       <button type="button" class="btn btn-primary up" id="{{ i.id }}" data-toggle="modal" data-target="#update">
         Update Records
       </button>

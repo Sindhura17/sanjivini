@@ -49,6 +49,10 @@ class event(models.Model):
 class doregis(models.Model):
     evid=models.ForeignKey("event",on_delete=models.CASCADE)
     docid=models.ForeignKey("doc",on_delete=models.CASCADE)
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['evid','docid'],name="onedocforeve"),
+        ]
     
 
 
