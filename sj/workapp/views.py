@@ -151,7 +151,8 @@ def update_rec(request):
     a=request.GET.get("a")
     print(a)
     d=request.GET.get("d")
-    u=medication(eventid=eid,adhar_no=a,desc=d)
+    print(d)
+    u=medication(eventid_id=eid,adhar_no_id=a,desc=d)
     try:
         u.save()
         data={"s":"success"}
