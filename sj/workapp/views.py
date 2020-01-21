@@ -62,24 +62,24 @@ def ngosign_in(request):
     password=request.POST.get("npassword")
     nobj=ngo.objects.filter(username=uname)
     if not nobj:
-        return render(request,'home.html')
+        return render(request,'home.html',{'m':'Invalid username or password'})
     if(nobj[0].password==password):
         request.session['nid']=nobj[0].id
         return HttpResponseRedirect('/workapp/nregister')
     else:
-        return render(request,'home.html')
+        return render(request,'home.html',{'m':'Invalid username or password'})
         
 def docsign_in(request):
     uname=request.POST.get("username")
     password=request.POST.get("password")
     dobj=doc.objects.filter(username=uname)
     if not dobj:
-        return render(request,'home.html')
+        return render(request,'home.html',{'m':'Invalid username or password'})
     if(dobj[0].password==password):
         request.session['did']=dobj[0].id
         return HttpResponseRedirect('/workapp/register')
     else:
-        return render(request,'home.html')
+        return render(request,'home.html',{'m':'Invalid username or password'})
    
 
 def nregister(request):
