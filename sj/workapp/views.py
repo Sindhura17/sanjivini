@@ -108,7 +108,6 @@ def aux(request):
     eve=event.objects.get(id=id)
     nod=eve.nod
     md=eve.maxd
-    print(nod,md)
     if(nod < md):
         dr=doregis(evid_id=id,docid_id=did)
         dr.save()

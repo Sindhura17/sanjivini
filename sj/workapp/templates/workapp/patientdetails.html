@@ -32,6 +32,7 @@ margin:5px;
     <tr>
       <th scope="col">SL</th>
       <th scope="col">Event Name</th>
+	  <th scope="col">Event Date</th>
       <th scope="col">Treatment Details</th>
     </tr>
   </thead>
@@ -40,6 +41,7 @@ margin:5px;
     <tr>
       <th scope="row">{{ i.id }}</th>
       <td>{{ i.eventid.name }}</td>
+	  <td>{{ i.eventid.date }}</td>
       <td>{{ i.desc }}</td>
     </tr>
   </tbody>
