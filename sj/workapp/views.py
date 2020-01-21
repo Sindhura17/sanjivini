@@ -98,8 +98,7 @@ def nregister(request):
     nobj1.name=non
     eform=eventForm()
     pform=patientForm()
-    uform=updateForm()
-    N={"ngo":nobj1,"eve":eobj,'eform':eform,'pform':pform,'uform':uform}
+    N={"ngo":nobj1,"eve":eobj,'eform':eform,'pform':pform}
     return render(request,'workapp/ngopage.html',N)
 
 
@@ -147,16 +146,17 @@ def add_patient(request):
     return HttpResponseRedirect('/workapp/nregister')
 
 def update_rec(request):
-    eid=request.POST.get("id")
+    eid=request.GET.get("id")
     print(eid)
-    uform=updateForm(request.POST)
-    if uform.is_valid():
-        u=uform.save(commit=False) 
-        u.eventid_id=eid
+    a=request.GET.get("a")
+    print(a)
+    d=request.GET.get("d")
+    u=medication(eventid=eid,adhar_no=a,desc=d)
+    try:
         u.save()
         data={"s":"success"}
         return JsonResponse(data)
-    else:
+    except InterruptedError:
         data={"s":"failed"}
         return JsonResponse(data)
     
