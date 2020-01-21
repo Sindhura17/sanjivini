@@ -110,9 +110,13 @@ def aux(request):
     md=eve.maxd
     if(nod < md):
         dr=doregis(evid_id=id,docid_id=did)
-        dr.save()
-        data={"s":"success"}
-        return JsonResponse(data)
+        try:
+            dr.save()
+            data={"s":"success"}
+            return JsonResponse(data)
+        except Exception:
+            data={"s":"failed"}
+            return JsonResponse(data)
     else:
         data={"s":"failed"}
         return JsonResponse(data)
