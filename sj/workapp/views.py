@@ -146,17 +146,14 @@ def add_patient(request):
 
 def update_rec(request):
     eid=request.GET.get("id")
-    print(eid)
     a=request.GET.get("a")
-    print(a)
     d=request.GET.get("d")
-    print(d)
     u=medication(eventid_id=eid,adhar_no_id=a,desc=d)
     try:
         u.save()
         data={"s":"success"}
         return JsonResponse(data)
-    except InterruptedError:
+    except Exception:
         data={"s":"failed"}
         return JsonResponse(data)
     
