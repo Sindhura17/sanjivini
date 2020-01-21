@@ -244,13 +244,9 @@ margin:5px;
     $(document).ready(function(){
     $('.up').click(function(){
     var id=this.id.toString();
-    console.log(id);
-    
     $('.sub').click(function(){
     var a=$("#ad").val()
     var d=$("#de").val()
-    console.log(a);
-    console.log(d);
     $.ajax({
     type:'GET',
     url:'/workapp/update_rec/',
