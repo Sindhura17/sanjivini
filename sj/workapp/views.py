@@ -44,7 +44,19 @@ def register(request):
         cn=nobj.ph
         i.nname=nname
         i.ph=cn
-    D={"doc":dobj1,"eve":eobj1}
+    rev=doregis.objects.filter(docid=did)
+    for i in rev:
+        eve=event.objects.get(id=i.evid_id)
+        ng=ngo.objects.get(id=eve.org_id_id)
+        i.ename=eve.name
+        i.ecity=eve.city
+        i.evenue=eve.venue
+        i.edate=eve.date
+        i.etime=eve.time
+        i.etext=eve.text
+        i.oname=ng.name
+        i.oph=ng.ph
+    D={"doc":dobj1,"eve":eobj1,"rev":rev}
     return render(request,'workapp/docpage.html',D)
 
 def ngosign(request):
@@ -160,6 +172,18 @@ def update_rec(request):
     except Exception:
         data={"s":"failed"}
         return JsonResponse(data)
-    
+
+def dreg(request):
+    eid=request.GET.get("id")
+    dr=doregis.objects.get(id=eid)
+    try:
+        dr.delete()
+        data={'s':'success'}
+        return JsonResponse(data)
+    except Exception:
+        data={'s':'failed'}
+        return JsonResponse(data)
+
+
 
     

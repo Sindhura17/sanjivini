@@ -36,6 +36,34 @@ margin:5px;
    <nav class="navbar navbar-expand-lg navbar-black bg-dark">
           <a class="navbar-brand" href="http://127.0.0.1:8000/">Home</a>
 	</nav>
+
+	<h1>Registered Events: </h1>
+	<div class="events">
+	{% for i in rev %}
+	 <hr style="height: 1px" noshade>
+	<div class="card-body">
+    <h5 class="card-title">{{ i.ename }}</h5>
+    <p class="card-text">{{ i.etext }}</p>
+	<div class="pcls">
+	<p class="card-text">{{ i.ecity }}</p>
+	<p class="card-text">{{ i.evenue }}</p>
+	</div>
+	<div class="pcls">
+	<p class="card-text">{{ i.edate }}</p>
+	<p class="card-text">{{ i.etime }}</p>
+	</div>
+	<div class="pcls">
+	<p class="card-text">NGO : {{ i.oname }}</p>
+	<p class="card-text">  Contact: {{ i.oph }}</p>
+	</div>
+	<div class="buttondiv">
+	<button class="btn btn-primary dreg" id="{{ i.id }}"> Deregister</button> 
+	</div>
+  </div>
+  {% endfor %}
+
+  <hr style="height: 1px" noshade>
+
 	<h1> Events: </h1>
 	<div class="events">
 	{% for i in eve %}
@@ -52,7 +80,7 @@ margin:5px;
 	<p class="card-text">{{ i.time }}</p>
 	</div>
 	<div class="pcls">
-	<p class="card-text">{{ i.nname }}</p>
+	<p class="card-text">NGO : {{ i.nname }}</p>
 	<p class="card-text">  Contact: {{ i.ph }}</p>
 	</div>
 	<div class="buttondiv">
@@ -76,12 +104,39 @@ margin:5px;
 	url:'/workapp/aux/',
 	data:{'id':id},
 	datatype:'json',
-	success:function(data){if (data.s=="success"){alert("success");}else {alert("failed")}},
+	success:function(data){
+		if (data.s=="success"){
+			alert("Success");
+			location.reload(true);
+			}
+		else {
+			alert("Failed");
+			location.reload(true);
+			}
+		},
+	})
+	});
+    $('.dreg').click(function(){
+	var did=this.id.toString();
+	console.log(did);
+	$.ajax({
+	type:'GET',
+	url:'/workapp/dreg/',
+	data:{'id':did},
+	datatype:'json',
+	success:function(data){
+		if (data.s=="success"){
+			alert("Deregistered");
+			location.reload(true);
+			}
+		else {
+			alert("Failed");
+			location.reload(true);
+			}
+		},
 	})
 	});
 	});
 	</script>
-
-
 </body>
 </html>
