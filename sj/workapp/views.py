@@ -56,6 +56,7 @@ def register(request):
         i.etext=eve.text
         i.oname=ng.name
         i.oph=ng.ph
+        i.img=eve.img
     D={"doc":dobj1,"eve":eobj1,"rev":rev}
     return render(request,'workapp/docpage.html',D)
 
