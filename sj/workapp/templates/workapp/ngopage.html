@@ -28,6 +28,15 @@ display:flex;
 .pcls > p{
 margin:5px;
 }
+
+.row{
+margin:5px;
+
+}
+.col-sm-4{
+margin-bottom:15px;
+}
+
   </style>
 
   </head>
@@ -123,41 +132,43 @@ margin:5px;
 	
 	
 	<div class="events">
-	{% for i in eve %}
-	 <hr style="height: 1px" noshade>
-	 <div class="col-sm-6">
-	 <div class="card" style="width: 25rem;">
-	 {% if i.img %}
-	<div >
-  <img class="card-img-top" src={{ i.img.url }}/ alt="Card image cap">
-  </div>
-	{% endif %}
-	<div class="card-body">
-    <h5 class="card-title">{{ i.name }}</h5>
-    <p class="card-text">{{ i.text }}</p>
-	<div class="pcls">
-	<p class="card-text">{{ i.city }}</p>
-	<p class="card-text">{{ i.venue }}</p>
-	</div>
-	<div class="pcls">
-	<p class="card-text">{{ i.date }}</p>
-	<p class="card-text">{{ i.time }}</p>
-	</div>
-	</div>
+	<div class="row">
+		{% for i in eve %}
+			<hr style="height: 1px" noshade>
+			<div class="col-sm-4">
+				<div class="card" style="width: 25rem;">
+				{% if i.img %}
+					<div >
+						<img class="card-img-top" src={{ i.img.url }}/ alt="Card image cap">
+					</div>
+				{% endif %}
+					<div class="card-body">
+						<h5 class="card-title">{{ i.name }}</h5>
+						<p class="card-text">{{ i.text }}</p>
+							<div class="pcls">
+								<p class="card-text">{{ i.city }}</p>
+								<p class="card-text">{{ i.venue }}</p>
+							</div>
+							<div class="pcls">
+								<p class="card-text">{{ i.date }}</p>
+								<p class="card-text">{{ i.time }}</p>
+							</div>
+					</div>
 	
-	<div class="buttondiv">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#patient">
-      Add patient
-    </button>
-      <button type="button" class="btn btn-primary up" id="{{ i.id }}" data-toggle="modal" data-target="#update">
-        Update Records
-      </button>
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#viewdetails">
-	View Details
-	</button>
-	</div>
-  </div>
-  {% endfor %}
+					<div class="buttondiv">
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#patient">
+							Add patient
+						</button>
+						<button type="button" class="btn btn-primary up" id="{{ i.id }}" data-toggle="modal" data-target="#update">
+							Update Records
+						</button>
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#viewdetails">
+							View Details
+						</button>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
   </div>
   </div>
   
