@@ -17,8 +17,8 @@ class patient(models.Model):
     phone=models.CharField(max_length=10)
 
 class medication(models.Model):
-    eventid=models.ForeignKey("event",on_delete=models.CASCADE)
-    adhar_no=models.ForeignKey("patient",on_delete=models.CASCADE)
+    eventid=models.ForeignKey("event",on_delete=models.CASCADE,)
+    adhar_no=models.ForeignKey("patient",on_delete=models.CASCADE,)
     desc=models.TextField()
     class Meta:
         constraints = [
@@ -48,8 +48,8 @@ class event(models.Model):
     
     
 class doregis(models.Model):
-    evid=models.ForeignKey("event",on_delete=models.CASCADE)
-    docid=models.ForeignKey("doc",on_delete=models.CASCADE)
+    evid=models.ForeignKey("event",on_delete=models.CASCADE,)
+    docid=models.ForeignKey("doc",on_delete=models.CASCADE,)
     class Meta:
         constraints = [
             models.UniqueConstraint(fields=['evid','docid'],name="onedocforeve"),

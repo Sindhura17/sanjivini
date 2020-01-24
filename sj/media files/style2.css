@@ -8,3 +8,9 @@ body{
 	background-color:white;
 	font-size:12px;
 }
+
+.nav-link
+{
+	position: absolute;
+  	right: 0px;
+}
