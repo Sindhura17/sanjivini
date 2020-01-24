@@ -149,6 +149,7 @@ def eventreg(request):
         e=eform.save(commit=False)
         nid=request.session['nid']
         e.org_id_id=nid #_id added to fk
+        print("entered")
         e.save()
         #return render(request,'workapp/ngopage.html',{'m':'Event registered'})
     return HttpResponseRedirect('/workapp/nregister')
