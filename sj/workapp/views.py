@@ -26,7 +26,11 @@ def docsign(request):
 def register(request):
     did=request.session['did']
     dobj=doc.objects.filter(id=did)
-    eobj=event.objects.all()
+    d=doregis.objects.filter(docid_id=did)
+    events_to_exclude=[]
+    for i in d:
+        events_to_exclude.append(i.evid_id)
+    eobj=event.objects.exclude(id__in=events_to_exclude)
     don=dobj[0].name
     firstletter=don[0]
     if(ord(firstletter)>=97):
