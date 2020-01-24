@@ -124,6 +124,8 @@ def aux(request):
         dr=doregis(evid_id=id,docid_id=did)
         try:
             dr.save()
+            eve.nod=eve.nod+1
+            eve.save()
             data={"s":"success"}
             return JsonResponse(data)
         except Exception:
@@ -142,7 +144,7 @@ def viewdetails(request):
     
 
 def eventreg(request):
-    eform=eventForm(request.POST)
+    eform=eventForm(request.POST,request.FILES)
     if eform.is_valid():
         e=eform.save(commit=False)
         nid=request.session['nid']
@@ -177,8 +179,7 @@ def update_rec(request):
 def dreg(request):
     eid=request.GET.get("id")
     dr=doregis.objects.get(id=eid)
-    e=dr.evid_id
-    eve=event.objects.get(id=e)
+    eve=event.objects.get(id=dr.evid_id)
     try:
         dr.delete()
         eve.nod=eve.nod-1

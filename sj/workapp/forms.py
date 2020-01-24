@@ -51,8 +51,6 @@ class eventForm(forms.ModelForm):
             'time':forms.TimeInput(attrs={'class':"form-control"}),
             'text':forms.Textarea(attrs={'class':"form-control"}),
             
-        }
-
 class patientForm(forms.ModelForm):
     class Meta:
         model=patient
