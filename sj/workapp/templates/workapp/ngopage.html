@@ -123,7 +123,12 @@ margin:5px;
 	<div class="pcls">
 	<p class="card-text">{{ i.date }}</p>
 	<p class="card-text">{{ i.time }}</p>
-	</div>
+  </div>
+  {% if i.img %}
+  <div class="pcls">
+    <img src={{i.img.url}}/>
+    </div>
+    {% endif %}
 	<div class="buttondiv">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#patient">
       Add patient
