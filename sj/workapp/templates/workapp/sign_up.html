@@ -11,18 +11,26 @@ background:url("/static/im4.jpg");
 }
   </style>
   <title>Sign Up</title>
+  <script>
+    var m="{{m}}";
+  </script>
+
+  <script>
+    function alertUser(){
+      if(m){
+        alert(m);
+      }
+    }
+  </script>
   </head>
 
-  <body>
+  <body onload="alertUser()">
   <!-- background="/static/image4.jpg"-->
 
 
    <nav class="navbar navbar-expand-lg navbar-black bg-dark">
           <a class="navbar-brand" href="http://127.0.0.1:8000/">Home</a>
   </nav>
-  <div>
-    <strong>{{m}}</strong>
-  </div>
     
 	<div>
 	<h4 class="text-primary">Doctor Sign Up:</h4>

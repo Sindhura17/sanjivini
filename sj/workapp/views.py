@@ -5,6 +5,7 @@ from django.http import HttpResponse,JsonResponse
 from django.http import HttpResponseRedirect
 from .models import doc,ngo,event,doregis,medication,patient
 import json
+from django.contrib import messages
 
 # Create your views here.
 
@@ -16,9 +17,12 @@ def sign_up(request):
 def docsign(request):
     dform=docForm(request.POST)
     if dform.is_valid():
-        d=dform.save()
-        request.session['did'] = d.id
-        return HttpResponseRedirect('/workapp/register')
+        try:
+            d=dform.save()
+            request.session['did'] = d.id
+            return HttpResponseRedirect('/workapp/register')
+        except Exception:
+            pass
     dform=docForm()
     nform=ngoForm()
     return render(request,'workapp/sign_up.html',{'dform':dform,'nform':nform,'m':'Enter valid details'})
@@ -67,9 +71,12 @@ def register(request):
 def ngosign(request):
     nform=ngoForm(request.POST)
     if nform.is_valid():
-        n=nform.save()
-        request.session['nid'] = n.id
-        return HttpResponseRedirect('/workapp/nregister')
+        try:
+            n=nform.save()
+            request.session['nid'] = n.id
+            return HttpResponseRedirect('/workapp/nregister')
+        except Exception:
+            pass
     dform=docForm()
     nform=ngoForm()
     return render(request,'workapp/sign_up.html',{'dform':dform,'nform':nform,'m':'Enter valid details'})
@@ -156,8 +163,11 @@ def eventreg(request):
         e.org_id_id=nid #_id added to fk
         print("entered")
         e.save()
-        #return render(request,'workapp/ngopage.html',{'m':'Event registered'})
     return HttpResponseRedirect('/workapp/nregister')
+        #except Exception:
+            # messages.error(request,'username or password not correct')
+        #return render(request,'workapp/ngopage.html',{'m':'Event registered'})
+            #return HttpResponseRedirect('/workapp/nregister')
     #eform=eventForm()
     #return render(request,'workapp/ngopage.html',{'eform':eform,'m':'Enter valid details'})
 
@@ -165,7 +175,13 @@ def eventreg(request):
 def add_patient(request):
     pform=patientForm(request.POST)
     if pform.is_valid():
-        pform.save()
+        try:
+            pform.save()
+            messages.success(request, 'Patient registered successfully')
+            return HttpResponseRedirect('/workapp/nregister')
+        except Exception:
+            pass
+    messages.error(request,'Enter valid details')
     return HttpResponseRedirect('/workapp/nregister')
 
 def update_rec(request):
