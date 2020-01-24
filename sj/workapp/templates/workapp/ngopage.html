@@ -65,7 +65,7 @@ margin:5px;
         </button>
       </div>
       <div class="modal-body">
-        <form action="/workapp/eventreg/" method="POST"> {% csrf_token %}
+        <form action="/workapp/eventreg/" method="POST" enctype="multipart/form-data"> {% csrf_token %}
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Event name:</label>
             {{eform.name}}
@@ -95,7 +95,11 @@ margin:5px;
             <label for="recipient-name" class="col-form-label">About event:</label>
             {{eform.text}}
           </div>
-
+          {% if eform.img %}
+          <div class="form-group">
+              <img src={{eform.img.url}}/>
+          </div>
+          {% endif %}
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Submit</button>
