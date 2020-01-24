@@ -44,6 +44,7 @@ class event(models.Model):
     date=models.DateField()
     time=models.TimeField(auto_now=False,auto_now_add=False)
     text=models.TextField(null=True)
+    img=models.ImageField(upload_to='pictures/',max_length=255,null=True)
     
     
 class doregis(models.Model):

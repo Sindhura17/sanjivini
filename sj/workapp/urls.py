@@ -15,5 +15,4 @@ path('add_patient/',views.add_patient,name='add_patient'),
 path('aux/',views.aux,name='aux'),
 path('update_rec/',views.update_rec,name='update_rec'),
 path('viewdetails/',views.viewdetails,name='viewdetails'),
-
 ]

@@ -41,7 +41,7 @@ class ngoForm(forms.ModelForm):
 class eventForm(forms.ModelForm):
     class Meta:
         model=event
-        fields=['name','venue','city','maxd','date','time','text']
+        fields=['name','venue','city','maxd','date','time','text','img']
         widgets={
             'name':forms.TextInput(attrs={'class':"form-control"}),
             'venue':forms.TextInput(attrs={'class':"form-control"}),
@@ -50,6 +50,7 @@ class eventForm(forms.ModelForm):
             'date':forms.DateInput(attrs={'class':"form-control"}),
             'time':forms.TimeInput(attrs={'class':"form-control"}),
             'text':forms.Textarea(attrs={'class':"form-control"}),
+            #'img':forms.FileInput(),
         }
 
 class patientForm(forms.ModelForm):
