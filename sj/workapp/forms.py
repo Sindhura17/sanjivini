@@ -50,7 +50,7 @@ class eventForm(forms.ModelForm):
             'date':forms.DateInput(attrs={'class':"form-control"}),
             'time':forms.TimeInput(attrs={'class':"form-control"}),
             'text':forms.Textarea(attrs={'class':"form-control"}),
-            #'img':forms.FileInput(),
+            'img':forms.FileInput(),
         }
 
 class patientForm(forms.ModelForm):
