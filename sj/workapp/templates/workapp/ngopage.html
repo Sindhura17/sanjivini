@@ -43,7 +43,13 @@ margin-bottom:15px;
   <body>
 
    <nav class="navbar navbar-expand-lg navbar-black bg-dark">
-          <a class="navbar-brand" href="http://127.0.0.1:8000/">Home</a>
+         <a class="navbar-brand" href="http://127.0.0.1:8000/">Home</a> 
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+         <ul class="navbar-nav navbar-right">
+          <li><a class="nav-link" href="#">Gallery</a></li>
+          </ul>
    </nav>
    {% for message in messages %}
    <div class="alert alert-info alert-dismissible fade show" role="alert">
