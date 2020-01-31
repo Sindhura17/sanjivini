@@ -37,19 +37,41 @@ margin:5px;
 margin-bottom:15px;
 }
 
+.navbar-link{
+justify-content:space-between;
+}
+.photo{
+width:1px;
+height:1px;
+}
+
+
+
   </style>
 
   </head>
   <body>
 
    <nav class="navbar navbar-expand-lg navbar-black bg-dark">
-         <a class="navbar-brand" href="http://127.0.0.1:8000/">Home</a> 
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-         <ul class="navbar-nav navbar-right">
-          <li><a class="nav-link" href="#">Gallery</a></li>
-          </ul>
+   <div class="navbar-header">
+    <!-- <div class="photo">
+      <img src="/static/im4.jpg">
+	 </div> -->
+	  <a class="navbar-brand" href="#">Sanjeevini</a>
+	 </div>
+	   <a class="navbar-brand" href="http://127.0.0.1:8000/">Home</a>
+	   <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Share
+                </a>
+				 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+				<div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+     
+    </div>
+                </div>
+			</div>
    </nav>
    {% for message in messages %}
    <div class="alert alert-info alert-dismissible fade show" role="alert">
