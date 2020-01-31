@@ -1,0 +1,54 @@
+
+
+
+
+
+https://graph.facebook.com/v5.0/oauth/access_token?grant_type=fb_exchange_token&client_id=556069925252524&client_secret=2f962994f2348437c34cc6042425ef05&fb_exchange_token=EAAH5vh5dbawBAElrztQmNAKy5vswWzEAZCWGBXw1ZAZBgrkjpsMBZBdQHuGO9ch1rRreMzGnRPFkZC9YbMw73pjaJWxLZCwxVT3BTYtyH0I66Q29qZAZCx72aNR24NpLnHrzPkSkFAIvMe9XIhVfruZBy5ueENTLiPpl88dSltZCUMj9JjdMAWWZC8OepwfZAeWYQZBQWvWVOBaTV0yLEKNDy6HBQhTIsHxPobiPb3dIPOYGDsa68CRROW0nxDZBTg93E1QGMZD
+
+'https://graph.facebook.com/111955640361443/feed?message=Awesome&access_token=EAAH5vh5dbawBAJhA0OUYxkPuux7sDqqTXFhRXiO3PA0LFEuktDdp5BN8k8pleVqVZAXLQ7QyuDEiUOXNZBaCqXNZAnK5olWjoZBNZB7gD3AaVsv0YZBktHsnC6jLOR2as7DeAOFLB2im7txfQml14ozVycWQP40XimybZCInjSfZBM3b3cxl1K6j'
+
+
+https://graph.facebook.com/v5.0/me?access_token=EAAH5vh5dbawBAJhA0OUYxkPuux7sDqqTXFhRXiO3PA0LFEuktDdp5BN8k8pleVqVZAXLQ7QyuDEiUOXNZBaCqXNZAnK5olWjoZBNZB7gD3AaVsv0YZBktHsnC6jLOR2as7DeAOFLB2im7txfQml14ozVycWQP40XimybZCInjSfZBM3b3cxl1K6j
+
+
+
+https://graph.facebook.com/v5.0/113748560179775/accounts?access_token=EAAH5vh5dbawBAJhA0OUYxkPuux7sDqqTXFhRXiO3PA0LFEuktDdp5BN8k8pleVqVZAXLQ7QyuDEiUOXNZBaCqXNZAnK5olWjoZBNZB7gD3AaVsv0YZBktHsnC6jLOR2as7DeAOFLB2im7txfQml14ozVycWQP40XimybZCInjSfZBM3b3cxl1K6j
+
+{
+   "name": "Sanjeevini S",
+   "id": "113748560179775"
+}
+#user id=113748560179775
+
+permanent access_token
+
+
+{
+   "data": [
+      {
+         "access_token": "EAAH5vh5dbawBAEYQBJZBiNCZAWY3lu0D4AmAhLpr2ge7SNlsqQpVa4MZBWuSxEOLbtHXLR2LMc8vm4JxtKoZCcBoBrVyy8PE1Cweun588zZBx4MZC84jnSb6FDn83TOmHndMrN1qZBCUDebuy6KyZAo2f3iHZCtz4sRtHRiQyyTNdsfaOrakY4dA0yY0uMeJnCtsZD",
+         "category": "Health & wellness website",
+         "category_list": [
+            {
+               "id": "2707",
+               "name": "Health & wellness website"
+            }
+         ],
+         "name": "Sanjeevini",
+         "id": "111955640361443",
+         "tasks": [
+            "ANALYZE",
+            "ADVERTISE",
+            "MODERATE",
+            "CREATE_CONTENT",
+            "MANAGE"
+         ]
+      }
+   ],
+   "paging": {
+      "cursors": {
+         "before": "MTExOTU1NjQwMzYxNDQz",
+         "after": "MTExOTU1NjQwMzYxNDQz"
+      }
+   }
+}
