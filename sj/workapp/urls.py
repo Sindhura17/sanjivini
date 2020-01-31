@@ -16,4 +16,6 @@ path('aux/',views.aux,name='aux'),
 path('update_rec/',views.update_rec,name='update_rec'),
 path('viewdetails/',views.viewdetails,name='viewdetails'),
 path('dreg/',views.dreg,name='dreg'),
+path('face/',views.face,name='face'),
+
 ]

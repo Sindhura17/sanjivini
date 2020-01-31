@@ -4,6 +4,7 @@ from workapp.forms import docForm,ngoForm,eventForm,patientForm,updateForm
 from django.http import HttpResponse,JsonResponse
 from django.http import HttpResponseRedirect
 from .models import doc,ngo,event,doregis,medication,patient
+from . import facebook
 import json
 from django.contrib import messages
 
@@ -212,5 +213,9 @@ def dreg(request):
         return JsonResponse(data)
 
 
-
-    
+def face(request):
+    image_url = 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/easiest-ever-fruit-ice-cream-ghk-1532637317.jpg'
+    my_name = 'No one'
+    message = my_name + ' likes this ice-cream!'
+    facebook.publish_photo_msg(message, image_url)
+    return HttpResponseRedirect('/workapp/nregister')
