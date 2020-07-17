@@ -214,8 +214,8 @@ def dreg(request):
 
 
 def face(request):
-    image_url = 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/easiest-ever-fruit-ice-cream-ghk-1532637317.jpg'
-    my_name = 'No one'
-    message = my_name + ' likes this ice-cream!'
-    facebook.publish_photo_msg(message, image_url)
+    image_url = 'https://cdn.pixabay.com/photo/2020/07/14/02/56/dahlia-5402619_960_720.jpg'
+    message = 'Message'
+    fb=facebook.Facebook()
+    fb.publish_photo_msg(message, image_url)
     return HttpResponseRedirect('/workapp/nregister')

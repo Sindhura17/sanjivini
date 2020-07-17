@@ -1,8 +1,9 @@
 
 *.pyc
-|sj/workapp/migrations/*
+|sj\workapp\migrations\*
 
-sj/workapp/migrations/0001_initial.py
+sj\workapp\migrations\0001_initial.py
 
 *.pyc
-sj/workapp/migrations/0003_event_text.py
+sj\workapp\migrations\0003_event_text.py
+sj\access_tokens.sh
