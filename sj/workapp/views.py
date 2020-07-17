@@ -4,7 +4,6 @@ from workapp.forms import docForm,ngoForm,eventForm,patientForm,updateForm
 from django.http import HttpResponse,JsonResponse
 from django.http import HttpResponseRedirect
 from .models import doc,ngo,event,doregis,medication,patient
-from . import facebook1
 from . import upload
 import json
 from django.contrib import messages
@@ -221,5 +220,11 @@ def face(request):
     image_url="media/"+image_url
     message=str(eobj[0].name)
     fb=upload.Facebook()
-    fb.publish_photo_msg(message, image_url)
+    try:
+        fb.publish_photo_msg(message, image_url)
+        data={"s":"success"}
+        return JsonResponse(data)
+    except Exception:
+        data={"s":"No image"}
+        return JsonResponse(data)
     return HttpResponseRedirect('/workapp/nregister')
