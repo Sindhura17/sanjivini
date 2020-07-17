@@ -4,7 +4,7 @@ from workapp.forms import docForm,ngoForm,eventForm,patientForm,updateForm
 from django.http import HttpResponse,JsonResponse
 from django.http import HttpResponseRedirect
 from .models import doc,ngo,event,doregis,medication,patient
-from . import facebook
+from . import facebook1
 import json
 from django.contrib import messages
 

@@ -92,6 +92,10 @@ height:1px;
       <h3>{{ngo.link}}</h3>
       <h3>{{ngo.text}}</h3>
       </div>
+	  
+	 <button type="button" class="btn btn-primary" style="position: relative; right: 0;" data-toggle="modal" data-target="#patient">
+							Add patient
+	</button>
 
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -174,8 +178,8 @@ height:1px;
 					</div>
 	
 					<div class="buttondiv">
-						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#patient">
-							Add patient
+						<button type="button" class="btn btn-primary upload" id="{{ i.id }}" >
+							Upload
 						</button>
 						<button type="button" class="btn btn-primary up" id="{{ i.id }}" data-toggle="modal" data-target="#update">
 							Update Records
@@ -311,6 +315,20 @@ height:1px;
     });
     });
     });
+	
+	$(document).ready(function(){
+    $('.upload').click(function(){
+	var id=this.id.toString();
+	$.ajax({
+    type:'GET',
+    url:'/workapp/face/',
+    data:{'id':id},
+    datatype:'json',
+    success:function(data){if (data.s=="success"){alert("success");}else {alert("failed")}},
+    })
+	});
+	});
+	
     </script>
 
 	
