@@ -222,7 +222,7 @@ def face(request):
     fb=upload.Facebook()
     try:
         fb.publish_photo_msg(message, image_url)
-        data={"s":"Success"}
+        data={"s":"success"}
         return JsonResponse(data)
     except Exception:
         data={"s":"No image"}

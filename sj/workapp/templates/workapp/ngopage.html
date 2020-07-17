@@ -300,6 +300,17 @@ height:1px;
 
   <script>
     $(document).ready(function(){
+      $('.upload').click(function(){
+	var id=this.id.toString();
+	$.ajax({
+    type:'GET',
+    url:'/workapp/face/',
+    data:{'id':id},
+    datatype:'json',
+    success:function(data){if (data.s=="success"){alert("success");}else {alert("failed")}},
+    })
+	});
+
     $('.up').click(function(){
     var id=this.id.toString();
     $('.sub').click(function(){
@@ -315,19 +326,6 @@ height:1px;
     });
     });
     });
-	
-	$(document).ready(function(){
-    $('.upload').click(function(){
-	var id=this.id.toString();
-	$.ajax({
-    type:'GET',
-    url:'/workapp/face/',
-    data:{'id':id},
-    datatype:'json',
-    success:function(data){if (data.s=="success"){alert("success");}else {alert("failed")}},
-    })
-	});
-	});
 	
     </script>
 
