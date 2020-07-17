@@ -214,8 +214,11 @@ def dreg(request):
 
 
 def face(request):
-    image_url = r"C:\Users\SINDHURA\cat.jpg"
-    message = 'New event'
+    eid=request.GET.get("id")
+    eobj=event.objects.filter(id=eid)
+    image_url=str(eobj[0].img)
+    image_url="media/"+image_url
+    message=str(eobj[0].name)
     fb=upload.Facebook()
     fb.publish_photo_msg(message, image_url)
     return HttpResponseRedirect('/workapp/nregister')
