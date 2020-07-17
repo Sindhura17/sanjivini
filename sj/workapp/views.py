@@ -5,6 +5,7 @@ from django.http import HttpResponse,JsonResponse
 from django.http import HttpResponseRedirect
 from .models import doc,ngo,event,doregis,medication,patient
 from . import facebook1
+from . import upload
 import json
 from django.contrib import messages
 
@@ -214,8 +215,8 @@ def dreg(request):
 
 
 def face(request):
-    image_url = 'https://cdn.pixabay.com/photo/2020/07/14/02/56/dahlia-5402619_960_720.jpg'
-    message = 'Message'
-    fb=facebook.Facebook()
+    image_url = r"C:\Users\SINDHURA\cat.jpg"
+    message = 'New event'
+    fb=upload.Facebook()
     fb.publish_photo_msg(message, image_url)
     return HttpResponseRedirect('/workapp/nregister')
