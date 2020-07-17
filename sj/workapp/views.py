@@ -220,5 +220,11 @@ def face(request):
     image_url="media/"+image_url
     message=str(eobj[0].name)
     fb=upload.Facebook()
-    fb.publish_photo_msg(message, image_url)
+    try:
+        fb.publish_photo_msg(message, image_url)
+        data={"s":"Success"}
+        return JsonResponse(data)
+    except Exception:
+        data={"s":"No image"}
+        return JsonResponse(data)
     return HttpResponseRedirect('/workapp/nregister')
