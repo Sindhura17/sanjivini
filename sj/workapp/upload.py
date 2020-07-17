@@ -1,6 +1,7 @@
 import json
 import requests
 import os
+import facebook
 class Facebook:
         @staticmethod
         def get_access_token():
@@ -20,12 +21,16 @@ class Facebook:
                 self.page_id=token['FACEBOOK_PAGE_ID']
                 self.page_access_token=token['FACEBOOK_PAGE_ACCESS_TOKEN']
                 
-        def publish_photo_msg(self,message, image_url):
-                url="https://graph.facebook.com/v5.0/"+self.page_id +"/photos"
+        def publish_photo_msg(self,msg, image_url):
+                graph = facebook.GraphAPI(self.page_access_token)
+                photo = open(image_url, "rb")
+                graph.put_photo(image=photo,message=msg,album_path=self.page_id+"/photos")
+                photo.close()
+                '''url="https://graph.facebook.com/v5.0/"+self.page_id +"/photos"
                 params={"access_token":self.page_access_token,
                 "url":image_url,
                 "caption":message,
                 }
                 requests.post(url,params)
-                return 
+                return''' 
 
