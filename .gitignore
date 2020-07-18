@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-*.pyc
-=======
 sj/access_tokens.sh
 *.pyc
 sj/workapp/migrations/*
->>>>>>> a95c0ce493fb112f06805a5fc18a42a704d2dd88
