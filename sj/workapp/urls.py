@@ -17,5 +17,7 @@ path('update_rec/',views.update_rec,name='update_rec'),
 path('viewdetails/',views.viewdetails,name='viewdetails'),
 path('dreg/',views.dreg,name='dreg'),
 path('face/',views.face,name='face'),
+path('doc_logout/',views.doc_logout,name='doc_logout'),
+path('ngo_logout/',views.ngo_logout,name='ngo_logout'),
 
 ]
