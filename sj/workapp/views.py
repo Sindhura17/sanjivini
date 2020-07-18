@@ -29,7 +29,10 @@ def docsign(request):
     return render(request,'workapp/sign_up.html',{'dform':dform,'nform':nform,'m':'Enter valid details'})
 
 def register(request):
-    did=request.session['did']
+    try:
+        did=request.session['did']
+    except KeyError:
+        return HttpResponseRedirect('/')
     dobj=doc.objects.filter(id=did)
     d=doregis.objects.filter(docid_id=did)
     events_to_exclude=[]
@@ -108,7 +111,10 @@ def docsign_in(request):
    
 
 def nregister(request):
-    nid=request.session['nid']
+    try:
+        nid=request.session['nid']
+    except KeyError:
+        return HttpResponseRedirect('/')
     nobj=ngo.objects.filter(id=nid)
     eobj=event.objects.filter(org_id=nid)
     non=nobj[0].name
@@ -225,6 +231,20 @@ def face(request):
         data={"s":"success"}
         return JsonResponse(data)
     except Exception:
-        data={"s":"No image"}
+        data={"s":"failed"}
         return JsonResponse(data)
     return HttpResponseRedirect('/workapp/nregister')
+
+def doc_logout(request):
+    try:
+        del request.session['did']
+    except KeyError:
+        pass
+    return HttpResponseRedirect('/')
+
+def ngo_logout(request):
+    try:
+        del request.session['nid']
+    except KeyError:
+        pass
+    return HttpResponseRedirect('/')
