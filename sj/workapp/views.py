@@ -248,3 +248,5 @@ def ngo_logout(request):
     except KeyError:
         pass
     return HttpResponseRedirect('/')
+
+    #return render(request,'home.html',{'m':'Please donot go back to previous page'})
