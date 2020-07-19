@@ -135,7 +135,10 @@ def nregister(request):
 
 def aux(request):
     id=request.GET.get("id")
-    did=request.session["did"]
+    try:
+        did=request.session['did']
+    except KeyError:
+        return HttpResponseRedirect('/')
     eve=event.objects.get(id=id)
     nod=eve.nod
     md=eve.maxd
@@ -166,7 +169,10 @@ def eventreg(request):
     eform=eventForm(request.POST,request.FILES)
     if eform.is_valid():
         e=eform.save(commit=False)
-        nid=request.session['nid']
+        try:
+            nid=request.session['nid']
+        except KeyError:
+            return HttpResponseRedirect('/')
         e.org_id_id=nid #_id added to fk
         print("entered")
         e.save()
