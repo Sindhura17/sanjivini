@@ -57,10 +57,10 @@ height:1px;
     <!-- <div class="photo">
       <img src="/static/im4.jpg">
 	 </div> -->
-	  <a class="navbar-brand" href="#">Sanjeevini</a>
+	  <a class="navbar-brand" href="#" >Sanjeevini</a>
 	 </div>
 	   <a class="nav-link" href="http://127.0.0.1:8000/">Home</a>
-	   <div class="nav-item dropdown">
+	   <!-- <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Share
                 </a>
@@ -69,10 +69,10 @@ height:1px;
           <a class="dropdown-item" href="/workapp/face/">Facebook</a>
           </div>
         </div>
-      </div>
-      <ul class="navbar-nav navbar-right">
-        <li><a class="nav-link" href="/workapp/ngo_logout">Logout</a></li>
-        </ul>
+      </div> -->
+      <div class="navbar-nav navbar-right">
+        <a class="nav-link" href="/workapp/ngo_logout">Logout</a>
+        </div>
    </nav>
    {% for message in messages %}
    <div class="alert alert-info alert-dismissible fade show" role="alert">
@@ -82,23 +82,25 @@ height:1px;
     </button>
     </div>
     {% endfor %}
-    <button type="button" class="btn btn-primary" style="position: absolute; right: 0;" data-toggle="modal" data-target="#exampleModal">
-      Add a New Event
-    </button>
-
+   
     <div class="text" >
       <div class="font-italic">
       <h2>{{ngo.name}}</h2>
       </div>
-      <h3>{{ngo.email}}</h3>
-      <h3>{{ngo.phone}}</h3>
-      <h3>{{ngo.link}}</h3>
-      <h3>{{ngo.text}}</h3>
+      <h4>{{ngo.email}}</h4>
+      <h4>{{ngo.phone}}</h4>
+     <a href="{{ngo.link}}" target="_blank"> <h4>{{ngo.link}}</h4> </a>
+      <h4>{{ngo.text}}</h4>
       </div>
 	  
 	 <button type="button" class="btn btn-primary" style="position: relative; right: 0;" data-toggle="modal" data-target="#patient">
 							Add patient
 	</button>
+	
+	 <button type="button" class="btn btn-primary" style="position: absolute;" data-toggle="modal" data-target="#exampleModal">
+      Add a New Event
+    </button>
+
 
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -182,6 +184,7 @@ height:1px;
 	
 					<div class="buttondiv">
 						<button type="button" class="btn btn-primary upload" id="{{ i.id }}" >
+						<!-- <a href="https://www.facebook.com/Sanjeevini-111955640361443" target="_blank"> Upload </a> -->
 							Upload
 						</button>
 						<button type="button" class="btn btn-primary up" id="{{ i.id }}" data-toggle="modal" data-target="#update">
