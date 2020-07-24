@@ -35,6 +35,13 @@ margin-bottom:15px;
 .regclass{
 margin:10px;
 }
+.navbar-right{
+	position: absolute;
+	right:10px;
+}
+.nav-link{
+	font-size:18px;
+}
   </style> 
 
   <title>Doctor Page</title>
@@ -46,9 +53,9 @@ margin:10px;
 
    <nav class="navbar navbar-expand-lg navbar-black bg-dark">
 		  <a class="navbar-brand" href="http://127.0.0.1:8000/">Home</a>
-		  <ul class="navbar-nav navbar-right">
-			<li>      <a class="nav-link" href="/workapp/doc_logout">Logout</a>        </li>
-			</ul>
+		  <div class="navbar-nav navbar-right">
+			<a class="nav-link" href="/workapp/doc_logout">Logout</a>
+		  </div>
 	</nav>
 
 	<h1 class="regclass">Registered Events: </h1>
