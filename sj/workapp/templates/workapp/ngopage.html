@@ -11,7 +11,6 @@ background:url("/static/im4.jpg");
 }
 .btn.btn-primary{
 margin:15px;
-allign:end;
 }
 .text{
 margin:15px;
@@ -64,7 +63,9 @@ height:1px;
 	 </div> -->
 	  <a class="navbar-brand" href="#" >Sanjeevini</a>
 	 </div>
-	   <a class="nav-link" href="http://127.0.0.1:8000/">Home</a>
+     <a class="nav-link" href="http://127.0.0.1:8000/">Home</a>
+     <a class="nav-link" style="color: #007bff;" data-toggle="modal" data-target="#patient">Add patient</a>
+     <a class="nav-link" style="color: #007bff;" data-toggle="modal" data-target="#exampleModal">Add a New Event</a>
 	   <!-- <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Share
@@ -97,14 +98,6 @@ height:1px;
      <a href="{{ngo.link}}" target="_blank"> <h4>{{ngo.link}}</h4> </a>
       <h4>{{ngo.text}}</h4>
       </div>
-	  
-	 <button type="button" class="btn btn-primary" style="position: relative; right: 0;" data-toggle="modal" data-target="#patient">
-							Add patient
-	</button>
-	
-	 <button type="button" class="btn btn-primary" style="position: absolute;" data-toggle="modal" data-target="#exampleModal">
-      Add a New Event
-    </button>
 
 
 
@@ -189,7 +182,6 @@ height:1px;
 	
 					<div class="buttondiv">
 						<button type="button" class="btn btn-primary upload" id="{{ i.id }}" >
-						<!-- <a href="https://www.facebook.com/Sanjeevini-111955640361443" target="_blank"> Upload </a> -->
 							Upload
 						</button>
 						<button type="button" class="btn btn-primary up" id="{{ i.id }}" data-toggle="modal" data-target="#update">
@@ -318,7 +310,7 @@ height:1px;
     url:'/workapp/face/',
     data:{'id':id},
     datatype:'json',
-    success:function(data){if (data.s=="success"){alert("success");}else {alert("failed")}},
+    success:function(data){if (data.s=="success"){alert("success");}else {alert("failedgfhg")}},
     })
 	});
 
