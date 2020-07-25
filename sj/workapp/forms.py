@@ -35,7 +35,7 @@ class ngoForm(forms.ModelForm):
             'password':forms.PasswordInput(attrs={'class':"form-control"}),
             'ph':forms.TextInput(attrs={'class':"form-control"}),
             'link':forms.URLInput(attrs={'class':"form-control"}),
-            'text':forms.Textarea(attrs={'class':"form-control"}),
+            'text':forms.Textarea(attrs={'class':"form-control",'rows':3}),
             }
 
 class eventForm(forms.ModelForm):
