@@ -30,7 +30,6 @@ margin:5px;
   <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">SL</th>
       <th scope="col">Event Name</th>
 	  <th scope="col">Event Date</th>
       <th scope="col">Treatment Details</th>
@@ -39,7 +38,6 @@ margin:5px;
   {% for i in md %}
   <tbody>
     <tr>
-      <th scope="row">{{ i.id }}</th>
       <td>{{ i.eventid.name }}</td>
 	  <td>{{ i.eventid.date }}</td>
       <td>{{ i.desc }}</td>
