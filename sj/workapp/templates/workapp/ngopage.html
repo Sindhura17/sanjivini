@@ -36,9 +36,6 @@ margin:5px;
 margin-bottom:15px;
 }
 
-.navbar-link{
-justify-content:space-between;
-}
 .photo{
 width:1px;
 height:1px;
@@ -50,6 +47,17 @@ height:1px;
 
 .nav-link{
 	font-size:18px;
+}
+.navbar{
+    display:flex;
+    justify-content:flex-start;
+}
+
+
+a:not([href]):not([tabindex]){
+  font-size:18px;
+  cursor: pointer;
+  color: #007bff;
 }
   </style>
 
@@ -63,7 +71,7 @@ height:1px;
 	 </div> -->
 	  <a class="navbar-brand" href="#" >Sanjeevini</a>
 	 </div>
-     <a class="nav-link" href="http://127.0.0.1:8000/">Home</a>
+     <a class="nav-link" href="/">Home</a>
      <a class="nav-link" style="color: #007bff;" data-toggle="modal" data-target="#patient">Add patient</a>
      <a class="nav-link" style="color: #007bff;" data-toggle="modal" data-target="#exampleModal">Add a New Event</a>
 	   <!-- <div class="nav-item dropdown">
