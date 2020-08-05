@@ -2,69 +2,27 @@
 <html lang="en">
   <head>
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-   <style>
-  body{
-background:url("/static/im4.jpg");
- background-repeat: no-repeat;
- background-size: cover;
-}
-.text{
-margin:15px;
-}
-.buttondiv{
-display:flex;
-}
-.buttondiv > a{
-margin:5px;
-}
-.pcls{
-display:flex;
-}
-.pcls > p{
-margin:5px;
-}
-
-.row{
-margin:5px;
-
-}
-.col-lg-4{
-margin-bottom:15px;
-}
-.regclass{
-margin:10px;
-}
-.navbar-right{
-	position: absolute;
-	right:10px;
-}
-.nav-link{
-	font-size:18px;
-}
-  </style> 
-
+   <link rel="stylesheet" href="/static/style1.css">
+   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
   <title>Doctor Page</title>
   </head>
 
   <body>
-  <!-- background="/static/image4.jpg"-->
-
-
-   <nav class="navbar navbar-expand-lg navbar-black bg-dark">
-		  <a class="navbar-brand" href="/">Home</a>
-		  <div class="navbar-nav navbar-right">
-			<a class="nav-link" href="/workapp/doc_logout">Logout</a>
-		  </div>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	   <div class="container-fluid">
+		  <a class="navbar-brand" href="/">Sanjeevini</a>
+		  <div class="navbar-nav ml-auto">
+		  <span><a class="nav-link" href="/workapp/doc_logout">Logout</a></span>
+		</div>
+	</div>
 	</nav>
-
-	<h1 class="regclass">Registered Events: </h1>
-	<div class="events">
+	<div class=" container-fluid">
+	<h1 class="detail">Registered Events: </h1>
 	<div class="row">
 		{% for i in rev %}
 			<hr style="height: 1px" noshade>
 			<div class="col-lg-4 col-sm-6">
-			<div class="card" style="width: 25rem;">
+			<div class="card">
 				{% if i.img %}
 					<div >
 						<img class="card-img-top" src={{ i.img.url }}/ alt="Card image cap">
@@ -73,17 +31,17 @@ margin:10px;
 			<div class="card-body">
 				<h5 class="card-title">{{ i.ename }}</h5>
 				<p class="card-text">{{ i.etext }}</p>
-				<div class="pcls">
-					<p class="card-text">{{ i.ecity }}</p>
-					<p class="card-text">{{ i.evenue }}</p>
+				<div class="hspace">
+					<span class="card-text">{{ i.ecity }}</span>
+					<span class="card-text">{{ i.evenue }}</span>
 				</div>
-				<div class="pcls">
-					<p class="card-text">{{ i.edate }}</p>
-					<p class="card-text">{{ i.etime }}</p>
+				<div class="hspace">
+					<span class="card-text">{{ i.edate }}</span>
+					<span class="card-text">{{ i.etime }}</span>
 				</div>
-				<div class="pcls">
-					<p class="card-text">NGO : {{ i.oname }}</p>
-					<p class="card-text">  Contact: {{ i.oph }}</p>
+				<div class="hspace">
+					<span class="card-text">NGO : {{ i.oname }}</span>
+					<span class="card-text">  Contact: {{ i.oph }}</span>
 				</div>
 				<div class="buttondiv">
 					<button class="btn btn-primary dreg" id="{{ i.id }}"> Deregister</button> 
@@ -92,18 +50,16 @@ margin:10px;
 			</div>
 			</div>
 		{% endfor %}
-		</div>
 	</div>
 
   <hr style="height: 1px" noshade>
 
-	<h1 class="regclass"> Events: </h1>
-	<div class="events">
+	<h1 class="detail"> Events: </h1>
 	<div class="row">
 		{% for i in eve %}
 		<hr style="height: 1px" noshade>
-		<div class="col-lg-4 col-md-6">
-		<div class="card" style="width: 25rem;">
+		<div class="col-lg-4 col-sm-6">
+		<div class="card">
 				{% if i.img %}
 					<div >
 						<img class="card-img-top" src={{ i.img.url }}/ alt="Card image cap">
@@ -111,18 +67,18 @@ margin:10px;
 				{% endif %}
 			<div class="card-body">
 				<h5 class="card-title">{{ i.name }}</h5>
-				<p class="card-text">{{ i.text }}</p>
-			<div class="pcls">
-				<p class="card-text">{{ i.city }}</p>
-				<p class="card-text">{{ i.venue }}</p>
+				<span class="card-text">{{ i.text }}</span>
+			<div class="hspace">
+				<span class="card-text">{{ i.city }}</span>
+				<span class="card-text">{{ i.venue }}</span>
 			</div>
-			<div class="pcls">
-				<p class="card-text">{{ i.date }}</p>
-				<p class="card-text">{{ i.time }}</p>
+			<div class="hspace">
+				<span class="card-text">{{ i.date }}</span>
+				<span class="card-text">{{ i.time }}</span>
 			</div>
-			<div class="pcls">
-				<p class="card-text">NGO : {{ i.nname }}</p>
-				<p class="card-text">  Contact: {{ i.ph }}</p>
+			<div class="hspace">
+				<span class="card-text">NGO : {{ i.nname }}</span>
+				<span class="card-text">  Contact: {{ i.ph }}</span>
 			</div>
 			<div class="buttondiv">
 				<button class="btn btn-primary bd" id="{{ i.id }}"> Register</button> 
@@ -131,8 +87,8 @@ margin:10px;
 			</div>
 			</div>
 		{% endfor %}
-		</div>
   </div>
+</div>
   
   
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

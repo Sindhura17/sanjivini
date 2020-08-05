@@ -1,0 +1,57 @@
+body{
+    /*background:url("/static/im4.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;*/
+     background-color: rgb(199, 241, 247,0.5);
+     font-family: 'Playfair Display', serif;
+}
+.navbar{
+    padding-left: 0;
+    padding-right: 0;
+}
+.navbar-dark .navbar-nav .nav-link{
+    font-size:18px;
+    color: #007bff;
+    cursor: pointer;
+}
+.nav-link{
+    font-size:18px;
+    color: #007bff;
+    padding: 0.5rem 0;
+}
+.nav-link:hover{
+    color: rgba(255,255,255,.75);
+}
+.navbar-expand-lg>.container-fluid{
+    padding-left: 20px;
+    padding-right: 20px;
+} 
+.container-fluid{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.detail{
+    margin: 20px 0;
+}
+.card{
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 15px rgb(8, 8, 22);
+    justify-content: flex-start;
+}
+
+.buttondiv{
+display:flex;
+justify-content: space-between;
+margin: 5px -10px 5px -10px;
+}
+.buttondiv .btn.btn-primary{
+    margin: 5px 5px 0;
+    font-size:0.8rem;
+}
+.hspace{
+    display: flex;
+    justify-content: space-between;
+}
+.hspace :nth-child(2){
+    margin-left: 50px;
+}

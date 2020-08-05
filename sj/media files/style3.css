@@ -3,6 +3,8 @@ body{
 	background:url("/static/im4.jpg");
 	 background-repeat: no-repeat;
    background-size: cover;
+   font-family: 'Playfair Display', serif;
+
   }
   label{
     font-weight:500;
