@@ -256,3 +256,10 @@ def ngo_logout(request):
     return HttpResponseRedirect('/')
 
     #return render(request,'home.html',{'m':'Please donot go back to previous page'})
+
+def event_doc(request):
+    eid=request.GET.get('eid','')
+    ed=doregis.objects.filter(evid=eid)
+    e=event.objects.get(id=eid)
+    D={'ed':ed,'eid':e}
+    return render(request,'workapp/event_doc.html',D)    

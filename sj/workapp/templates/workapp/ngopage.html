@@ -18,7 +18,8 @@
       <div class="navbar-nav mr-auto">
      <a class="nav-link" href="/">Home</a>
      <a class="nav-link" data-toggle="modal" data-target="#patient">Add patient</a>
-     <a class="nav-link" data-toggle="modal" data-target="#exampleModal">Add a New Event</a>
+     <a class="nav-link" data-toggle="modal" data-target="#exampleModal">Add New Event</a>
+     <a class="nav-link" data-toggle="modal" data-target="#viewdetails">Patient Details</a>
 	   <!-- <div class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Share
@@ -84,9 +85,9 @@
                     <button type="button" class="btn btn-primary up" id="{{ i.id }}" data-toggle="modal" data-target="#update">
                       Update Records
                     </button>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#viewdetails">
-                      View Details
-                    </button>
+                    <a type="button" class="btn btn-primary doc" id="{{ i.id }}" href="/workapp/event_doc?eid={{i.id}}">
+                      Doctors List
+                    </a>
                   </div>
               </div>
             </div>
@@ -262,28 +263,28 @@
   <script>
     $(document).ready(function(){
       $('.upload').click(function(){
-	var id=this.id.toString();
-	$.ajax({
-    type:'GET',
-    url:'/workapp/face/',
-    data:{'id':id},
-    datatype:'json',
-    success:function(data){if (data.s=="success"){alert("success");}else {alert("failed")}},
-    })
-	});
+	    var id=this.id.toString();
+      $.ajax({
+        type:'GET',
+        url:'/workapp/face/',
+        data:{'id':id},
+        datatype:'json',
+        success:function(data){if (data.s=="success"){alert("success");}else {alert("failed")}},
+        })
+	    });
 
     $('.up').click(function(){
-    var id=this.id.toString();
-    $('.sub').click(function(){
-    var a=$("#ad").val()
-    var d=$("#de").val()
-    $.ajax({
-    type:'GET',
-    url:'/workapp/update_rec/',
-    data:{'id':id,'a':a,'d':d},
-    datatype:'json',
-    success:function(data){if (data.s=="success"){alert("success");}else {alert("failed")}},
-    })
+      var id=this.id.toString();
+      $('.sub').click(function(){
+        var a=$("#ad").val()
+        var d=$("#de").val()
+        $.ajax({
+        type:'GET',
+        url:'/workapp/update_rec/',
+        data:{'id':id,'a':a,'d':d},
+        datatype:'json',
+        success:function(data){if (data.s=="success"){alert("success");}else {alert("failed")}},
+        })
     });
     });
     });

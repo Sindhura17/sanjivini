@@ -19,5 +19,5 @@ path('dreg/',views.dreg,name='dreg'),
 path('face/',views.face,name='face'),
 path('doc_logout/',views.doc_logout,name='doc_logout'),
 path('ngo_logout/',views.ngo_logout,name='ngo_logout'),
-
+path('event_doc/',views.event_doc,name='event_doc'),
 ]

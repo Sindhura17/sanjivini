@@ -42,10 +42,10 @@ body{
 .buttondiv{
 display:flex;
 justify-content: space-between;
-margin: 5px -10px 5px -10px;
+margin: 5px -8px 5px -8px;
 }
 .buttondiv .btn.btn-primary{
-    margin: 5px 5px 0;
+    margin: 5px 5px 0 0;
     font-size:0.8rem;
 }
 .hspace{
