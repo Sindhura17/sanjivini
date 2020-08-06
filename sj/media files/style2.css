@@ -4,13 +4,21 @@ body{
 	font-family: 'Playfair Display', serif;
 
 }
-
-.navbar-toggler
-{
-	background-color:white;
-	font-size:12px;
+.bg-dark {
+    background-color: black!important;
+}
+.navbar-dark .navbar-nav .nav-link{
+    font-size:18px;
+    color: #007bff;
+    cursor: pointer;
+}
+h5,small{
+	color: #007bff;
 }
 
 #logo{
 	margin-left:10px;
+}
+div.col-6.col-md{
+	padding-left:25px;
 }

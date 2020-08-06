@@ -1,8 +1,6 @@
 
 body{
-	background:url("/static/im4.jpg");
-	 background-repeat: no-repeat;
-   background-size: cover;
+  background-color: rgb(199, 241, 247,0.5);
    font-family: 'Playfair Display', serif;
 
   }
