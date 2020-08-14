@@ -1,8 +1,12 @@
+html, body {
+	height: 100%;
+  }
 body{
 	margin:0px;
 	background-color:black;
 	font-family: 'Playfair Display', serif;
-
+	display: flex;
+  	flex-direction: column;
 }
 .bg-dark {
     background-color: black!important;
@@ -16,9 +20,14 @@ h5,small{
 	color: #007bff;
 }
 
-#logo{
-	margin-left:10px;
+.main-content{
+	flex: 1 0 auto;
 }
-div.col-6.col-md{
-	padding-left:25px;
+
+footer{
+	flex-shrink: 0;
+	padding:20px 5px 5px;
+	margin:20px 10px 5px;
+	border-top:1px solid wheat;
+	
 }
