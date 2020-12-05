@@ -1,13 +1,15 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render,redirect
 from workapp.forms import docForm,ngoForm,eventForm,patientForm,updateForm
+from .serializers import EventSerializer
+from rest_framework import viewsets
 from django.http import HttpResponse,JsonResponse
 from django.http import HttpResponseRedirect
 from .models import doc,ngo,event,doregis,medication,patient
 from . import upload
 import json
 from django.contrib import messages
-
+from rest_framework.response import Response
 # Create your views here.
 
 def sign_up(request):
@@ -263,3 +265,15 @@ def event_doc(request):
     e=event.objects.get(id=eid)
     D={'ed':ed,'eid':e}
     return render(request,'workapp/event_doc.html',D)    
+
+'''@api_view(['GET'])
+def display(request):
+    if request.method=='GET':
+        eve=event.objects.all()
+        serializer=EventSerializer(eve,many=True)
+        return Response(serializer.data)'''
+
+class EventViewset(viewsets.ModelViewSet):
+    queryset=event.objects.all()
+    serializer_class=EventSerializer
+        

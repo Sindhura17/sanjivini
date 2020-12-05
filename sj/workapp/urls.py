@@ -1,6 +1,11 @@
 from . import views
 from django.urls import path,include
 from django.conf.urls import url
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register(r'events', views.EventViewset)
+
 
 urlpatterns=[
 path('sign_up/',views.sign_up,name='sign_up'),
@@ -20,4 +25,5 @@ path('face/',views.face,name='face'),
 path('doc_logout/',views.doc_logout,name='doc_logout'),
 path('ngo_logout/',views.ngo_logout,name='ngo_logout'),
 path('event_doc/',views.event_doc,name='event_doc'),
+path('', include(router.urls)),
 ]
